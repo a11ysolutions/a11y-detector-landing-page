@@ -42,6 +42,32 @@
     max-width: 280px;
 }
 
+/* Feature Icon Styles */
+.feature-icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.feature-icon svg {
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for feature cards */
+.feature-card:hover .feature-icon {
+    background-color: #16a34a; /* green-600 */
+}
+
+.feature-card:hover .feature-icon svg {
+    color: #ffffff; /* white */
+}
+
 /* Audience Grid */
 .audience-grid {
     display: grid;
@@ -62,4 +88,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: var(--spacing-lg);
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-large);
+    border-left: 4px solid #16a34a; /* green-400 */
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
 }

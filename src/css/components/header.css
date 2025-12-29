@@ -1,20 +1,54 @@
-/* Header Component */
-.header {
-    background-color: var(--background);
+/* Header Styles - White background */
+header {
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     width: 100%;
-    height: 61.6px;
+    height: 64px;
     z-index: 100;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
-.header .container {
+/* Language Selector */
+.language-selector-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 100%;
-    padding: 0 16px;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.language-selector-container:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.language-selector-container:focus-within {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.language-selector-container svg {
+    width: 16px;
+    height: 16px;
+    color: #6b7280;
+}
+
+.language-selector-container select {
+    background-color: transparent;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.language-selector-container select option {
+    background-color: #ffffff;
+    color: #374151;
 }
 
 .logo img {
@@ -29,16 +63,14 @@
 }
 
 .nav-link {
-    color: white;
+    color: #ffffff;
+    background-color: #000000;
     text-decoration: none;
     font-weight: 400;
     font-size: 16px;
     padding: 6px 16px;
     border-radius: 4px;
-    background-color: #000000;
     transition: background-color 0.3s ease;
-    display: block;
-    border: 0px solid rgb(229, 231, 235);
 }
 
 .nav-link:hover {
@@ -135,21 +167,6 @@
 
 /* Language selector specific styles */
 
-.language-selector-container select {
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.language-selector-container select:focus {
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-/* Enhanced hover effect for the entire container */
-.language-selector-container:hover {
-    background-color: #f3f4f6 !important;
-}
-
 /* Transition utilities */
 .transition-colors {
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -208,13 +225,6 @@ footer p, footer h3, footer a, footer span {
     --tw-gradient-to: #000000;
 }
 
-.hover\:from-\[#0c8d65\]:hover {
-    --tw-gradient-from: #0c8d65;
-}
-
-.hover\:to-\[#096648\]:hover {
-    --tw-gradient-to: #096648;
-}
 
 /* Shadow utilities */
 .shadow-lg {
@@ -485,9 +495,6 @@ button[type="submit"] {
     flex-shrink: 0;
 }
 
-.hover\:text-\[#0d9e71\]:hover {
-    color: rgb(13 158 113);
-}
 
 .transition-colors {
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -504,9 +511,6 @@ button[type="submit"] {
     box-shadow: 0 0 0 2px rgb(13 158 113 / 0.5);
 }
 
-.focus\:outline-\[#0d9e71\]:focus {
-    box-shadow: 0 0 0 2px rgb(13 158 113 / 0.5);
-}
 
 .focus\:outline-offset-2:focus {
     box-shadow: 0 0 0 2px rgb(13 158 113 / 0.5), 0 0 0 0 2px rgb(255 255 255);

@@ -1,0 +1,18 @@
+/* Custom styles - separate from Tailwind */
+
+/* Base styles */
+@import url('css/base/variables.css');
+@import url('css/base/base.css');
+@import url('css/base/responsive.css');
+
+/* Component styles */
+@import url('css/components/header.css');
+@import url('css/components/buttons.css');
+@import url('css/components/forms.css');
+@import url('css/components/cards.css');
+
+/* Section styles */
+@import url('css/sections/hero.css');
+@import url('css/sections/features.css');
+@import url('css/sections/contact.css');
+@import url('css/sections/footer.css');
