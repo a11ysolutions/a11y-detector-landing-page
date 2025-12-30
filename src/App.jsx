@@ -6,12 +6,15 @@ import Audience from './components/Audience'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { LanguageProvider, useLanguage } from './LanguageContext'
 
-function App() {
+function AppContent() {
+  const { t } = useLanguage()
+
   return (
     <div className="App">
-      <a href="#main-content" className="skip-link">Saltar al contenido</a>
-      <a href="#footer" className="skip-link">Ir al pie de página</a>
+      <a href="#main-content" className="skip-link">{t('accessibility.skip_to_content')}</a>
+      <a href="#footer" className="skip-link">{t('accessibility.skip_to_footer')}</a>
 
       <Header />
       <main id="main-content">
@@ -23,6 +26,14 @@ function App() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   )
 }
 

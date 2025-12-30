@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "contact": "Contáctanos"
+  },
+  "hero": {
+    "title": "A11i Detector: Tu Experto en Accesibilidad Web",
+    "description": "Descubre y reporta automáticamente los problemas de accesibilidad en tu sitio web. Una herramienta inteligente que actúa como un experto en accesibilidad para garantizar el cumplimiento con la Ley Europea de Accesibilidad y las pautas WCAG.",
+    "cta": "Prueba A11i Detector gratis"
+  },
+  "features": {
+    "title": "¿Qué es A11i Detector y",
+    "title_highlight": "cómo funciona?",
+    "items": [
+      {
+        "title": "Análisis Automatizado",
+        "description": "Escaneo completo del sitio web con detección automática de problemas según WCAG 2.1 nivel AA y cumplimiento con la norma técnica EN 301 549."
+      },
+      {
+        "title": "Reportes Detallados",
+        "description": "Informes completos con severidad y prioridad, recomendaciones específicas para corrección y guías paso a paso para implementar soluciones."
+      },
+      {
+        "title": "Corrección Guiada",
+        "description": "Proporciona guías paso a paso y soluciones prácticas para implementar las correcciones necesarias en tu código."
+      },
+      {
+        "title": "Integración Continua",
+        "description": "Se integra en tu flujo de desarrollo para mantener la accesibilidad como parte del proceso de calidad."
+      }
+    ]
+  },
+  "audience": {
+    "title": "¿Para quién es A11i Detector?",
+    "items": [
+      {
+        "title": "Empresas y Organizaciones",
+        "description": "Para empresas que necesitan cumplir con la Ley Europea de Accesibilidad y garantizar que sus sitios web sean inclusivos para todos los usuarios."
+      },
+      {
+        "title": "Desarrolladores Web",
+        "description": "Para equipos de desarrollo que quieren integrar la accesibilidad desde las primeras etapas del desarrollo y mantener estándares de calidad."
+      },
+      {
+        "title": "Agencias y Consultoras",
+        "description": "Para agencias digitales que ofrecen servicios de accesibilidad y necesitan herramientas eficientes para auditar y mejorar sus proyectos."
+      },
+      {
+        "title": "Instituciones Públicas",
+        "description": "Para entidades gubernamentales y organizaciones públicas que deben cumplir con normativas de accesibilidad digital obligatorias."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Confianza y Resultados",
+    "stats": [
+      {
+        "value": "500+",
+        "label": "Sitios auditados"
+      },
+      {
+        "value": "95%",
+        "label": "Precisión en detección"
+      },
+      {
+        "value": "24h",
+        "label": "Tiempo promedio de análisis"
+      },
+      {
+        "value": "100%",
+        "label": "Cumplimiento WCAG garantizado"
+      }
+    ],
+    "reviews": [
+      {
+        "quote": "A11i Detector nos permitió identificar y corregir problemas críticos de accesibilidad en tiempo récord. Ahora cumplimos con la Ley Europea de Accesibilidad sin complicaciones.",
+        "author": "Ana García",
+        "position": "Directora de Tecnología en Empresa XYZ"
+      },
+      {
+        "quote": "Como herramienta automática, A11i Detector es increíblemente eficiente. Nos ahorra semanas de trabajo manual y garantiza que mantenemos los estándares de accesibilidad.",
+        "author": "Carlos Rodríguez",
+        "position": "Lead Developer en Agencia Digital ABC"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Prueba",
+    "title_highlight": "A11i Detector Gratis",
+    "description": "Solicita una demostración gratuita y descubre cómo A11i Detector puede transformar la accesibilidad de tu sitio web.",
+    "benefits": [
+      "Análisis completo gratuito",
+      "Reporte detallado en 24h",
+      "Consulta personalizada incluida"
+    ],
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "company": "Empresa",
+      "website": "Sitio web a analizar",
+      "sector": "Sector",
+      "message": "Mensaje adicional",
+      "privacy": "Acepto la política de privacidad",
+      "submit": "Solicitar demostración gratis",
+      "sending": "Enviando...",
+      "placeholders": {
+        "name": "Tu nombre completo",
+        "email": "tu@email.com",
+        "company": "Nombre de tu empresa",
+        "website": "https://tusitio.com",
+        "message": "Cuéntanos más sobre tus necesidades..."
+      },
+      "sectors": {
+        "placeholder": "Seleccionar sector",
+        "ecommerce": "E-commerce",
+        "finance": "Finanzas",
+        "education": "Educación",
+        "health": "Salud",
+        "government": "Gobierno",
+        "other": "Otro"
+      },
+      "validation": {
+        "required": "Por favor, completa todos los campos obligatorios.",
+        "privacy": "Debes aceptar la política de privacidad.",
+        "success": "¡Gracias por tu interés! Te contactaremos pronto con más información sobre A11i Detector."
+      }
+    }
+  },
+  "footer": {
+    "description": "Expertos en Accesibilidad Web y Digital.",
+    "about": "Ayudamos a empresas y entidades a cumplir con la Ley de Accesibilidad Europea, la norma técnica EN 301 549 y las pautas WCAG, asegurando una experiencia digital inclusiva y conforme a la legalidad.",
+    "contact_title": "Contacto",
+    "email": "a11ycontact@a11ysolutions.com",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2025 a11ySolutions. Todos los derechos reservados",
+    "privacy_policy": "Política de Privacidad"
+  },
+  "accessibility": {
+    "skip_to_content": "Saltar al contenido",
+    "skip_to_footer": "Ir al pie de página",
+    "language_selector": "Selector de idioma. Idioma actual: Español",
+    "language_instruction": "Use las flechas para navegar y presione Enter para seleccionar",
+    "menu_toggle": "Toggle menu"
+  }
+}

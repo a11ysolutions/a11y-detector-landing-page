@@ -1,49 +1,27 @@
 import React from 'react'
 import { Star, TrendingUp, Users, Clock, CheckCircle, FileCheck } from 'lucide-react'
+import { useLanguage } from '../LanguageContext'
 
 const Testimonials = () => {
-  const stats = [
-    {
-      icon: <TrendingUp className="w-8 h-8 text-green-600" />,
-      value: "500+",
-      label: "Sitios auditados"
-    },
-    {
-      icon: <Star className="w-8 h-8 text-green-600" />,
-      value: "95%",
-      label: "Precisión en detección"
-    },
-    {
-      icon: <Clock className="w-8 h-8 text-green-600" />,
-      value: "24h",
-      label: "Tiempo promedio de análisis"
-    },
-    {
-      icon: <Users className="w-8 h-8 text-green-600" />,
-      value: "100%",
-      label: "Cumplimiento WCAG garantizado"
-    }
-  ]
+  const { t } = useLanguage()
 
-  const testimonials = [
-    {
-      quote: "A11i Detector nos permitió identificar y corregir problemas críticos de accesibilidad en tiempo récord. Ahora cumplimos con la Ley Europea de Accesibilidad sin complicaciones.",
-      author: "Ana García",
-      position: "Directora de Tecnología en Empresa XYZ"
-    },
-    {
-      quote: "Como herramienta automática, A11i Detector es increíblemente eficiente. Nos ahorra semanas de trabajo manual y garantiza que mantenemos los estándares de accesibilidad.",
-      author: "Carlos Rodríguez",
-      position: "Lead Developer en Agencia Digital ABC"
+  const stats = t('testimonials.stats').map((stat, index) => {
+    const icons = [<TrendingUp />, <Star />, <Clock />, <Users />]
+    return {
+      icon: React.cloneElement(icons[index], { className: "w-8 h-8 text-green-600" }),
+      value: stat.value,
+      label: stat.label
     }
-  ]
+  })
+
+  const testimonials = t('testimonials.reviews')
 
   return (
     <section className="py-16 section-dark">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Confianza y Resultados
+            {t('testimonials.title')}
           </h2>
           <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
         </div>

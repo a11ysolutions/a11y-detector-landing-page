@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Mail, Linkedin, CheckCircle } from 'lucide-react'
+import { useLanguage } from '../LanguageContext'
 
 const Contact = () => {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -31,20 +33,20 @@ const Contact = () => {
     const isValid = requiredFields.every(field => formData[field].trim() !== '')
 
     if (!isValid) {
-      alert('Por favor, completa todos los campos obligatorios.')
+      alert(t('contact.form.validation.required'))
       setIsSubmitting(false)
       return
     }
 
     if (!formData.privacidad) {
-      alert('Debes aceptar la política de privacidad.')
+      alert(t('contact.form.validation.privacy'))
       setIsSubmitting(false)
       return
     }
 
     // Simular envío
     setTimeout(() => {
-      alert('¡Gracias por tu interés! Te contactaremos pronto con más información sobre A11i Detector.')
+      alert(t('contact.form.validation.success'))
       setFormData({
         nombre: '',
         email: '',
@@ -65,8 +67,8 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-              <span className="text-white">Prueba</span>{' '}
-              <span className="text-white">A11i Detector Gratis</span>
+              <span className="text-white">{t('contact.title')}</span>{' '}
+              <span className="text-white">{t('contact.title_highlight')}</span>
             </h2>
             <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
           </div>
@@ -74,22 +76,16 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div className="space-y-6">
               <p className="white-text text-lg leading-relaxed">
-                Solicita una demostración gratuita y descubre cómo A11i Detector puede transformar la accesibilidad de tu sitio web.
+                {t('contact.description')}
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                  <span className="white-text">Análisis completo gratuito</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                  <span className="white-text">Reporte detallado en 24h</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                  <span className="white-text">Consulta personalizada incluida</span>
-                </div>
+                {t('contact.benefits').map((benefit, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+                    <span className="white-text">{benefit}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -98,7 +94,7 @@ const Contact = () => {
                 <div className="grid grid-cols-1 gap-4 md:gap-6 mb-4 md:mb-6">
                   <div className="form-group">
                     <label htmlFor="nombre" className="block text-left text-white mb-2">
-                      Nombre *
+                      {t('contact.form.name')} *
                     </label>
                     <input
                       type="text"
@@ -107,14 +103,14 @@ const Contact = () => {
                       value={formData.nombre}
                       onChange={handleChange}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
-                      placeholder="Tu nombre completo"
+                      placeholder={t('contact.form.placeholders.name')}
                       required
                     />
                   </div>
 
                   <div className="form-group">
                     <label htmlFor="email" className="block text-left text-white mb-2">
-                      Correo electrónico *
+                      {t('contact.form.email')} *
                     </label>
                     <input
                       type="email"
@@ -123,14 +119,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
-                      placeholder="tu@email.com"
+                      placeholder={t('contact.form.placeholders.email')}
                       required
                     />
                   </div>
 
                   <div className="form-group">
                     <label htmlFor="empresa" className="block text-left text-white mb-2">
-                      Empresa *
+                      {t('contact.form.company')} *
                     </label>
                     <input
                       type="text"
@@ -139,14 +135,14 @@ const Contact = () => {
                       value={formData.empresa}
                       onChange={handleChange}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
-                      placeholder="Nombre de tu empresa"
+                      placeholder={t('contact.form.placeholders.company')}
                       required
                     />
                   </div>
 
                   <div className="form-group">
                     <label htmlFor="url" className="block text-left text-white mb-2">
-                      Sitio web a analizar *
+                      {t('contact.form.website')} *
                     </label>
                     <input
                       type="url"
@@ -155,14 +151,14 @@ const Contact = () => {
                       value={formData.url}
                       onChange={handleChange}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
-                      placeholder="https://tusitio.com"
+                      placeholder={t('contact.form.placeholders.website')}
                       required
                     />
                   </div>
 
                   <div className="form-group">
                     <label htmlFor="sector" className="block text-left text-white mb-2">
-                      Sector
+                      {t('contact.form.sector')}
                     </label>
                     <select
                       id="sector"
@@ -172,19 +168,19 @@ const Contact = () => {
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
                       required
                     >
-                      <option value="">Seleccionar sector</option>
-                      <option value="ecommerce">E-commerce</option>
-                      <option value="finanzas">Finanzas</option>
-                      <option value="educacion">Educación</option>
-                      <option value="salud">Salud</option>
-                      <option value="gobierno">Gobierno</option>
-                      <option value="otros">Otro</option>
+                      <option value="">{t('contact.form.sectors.placeholder')}</option>
+                      <option value="ecommerce">{t('contact.form.sectors.ecommerce')}</option>
+                      <option value="finance">{t('contact.form.sectors.finance')}</option>
+                      <option value="education">{t('contact.form.sectors.education')}</option>
+                      <option value="health">{t('contact.form.sectors.health')}</option>
+                      <option value="government">{t('contact.form.sectors.government')}</option>
+                      <option value="other">{t('contact.form.sectors.other')}</option>
                     </select>
                   </div>
 
                   <div className="form-group">
                     <label htmlFor="mensaje" className="block text-left text-white mb-2">
-                      Mensaje adicional
+                      {t('contact.form.message')}
                     </label>
                     <textarea
                       id="mensaje"
@@ -193,7 +189,7 @@ const Contact = () => {
                       onChange={handleChange}
                       rows="4"
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
-                      placeholder="Cuéntanos más sobre tus necesidades..."
+                      placeholder={t('contact.form.placeholders.message')}
                     />
                   </div>
                 </div>
@@ -209,9 +205,9 @@ const Contact = () => {
                       className="mr-3 w-4 h-4 text-green-600 bg-gray-700 border-gray-600 rounded focus:ring-green-400"
                       required
                     />
-                    Acepto la{' '}
+                    {t('contact.form.privacy')}{' '}
                     <a href="#" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 underline ml-1">
-                      política de privacidad
+                      {t('footer.privacy_policy').toLowerCase()}
                     </a>{' '}
                     *
                   </label>
@@ -222,7 +218,7 @@ const Contact = () => {
                   disabled={isSubmitting}
                   className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-md transition duration-300 hover:from-green-700 hover:to-green-800 transform hover:scale-105 focus:outline focus:outline-4 focus:outline-white focus:outline-offset-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base"
                 >
-                  {isSubmitting ? 'Enviando...' : 'Solicitar demostración gratis'}
+                  {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                 </button>
               </form>
             </div>

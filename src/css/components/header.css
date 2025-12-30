@@ -14,19 +14,17 @@ header {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 12px;
-    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.15s ease;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: transparent;
 }
 
 .language-selector-container:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: transparent;
 }
 
 .language-selector-container:focus-within {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: transparent;
 }
 
 .language-selector-container svg {

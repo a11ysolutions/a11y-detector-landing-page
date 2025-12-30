@@ -1,36 +1,25 @@
 import React from 'react'
 import { Building, Users, FileText, Code } from 'lucide-react'
+import { useLanguage } from '../LanguageContext'
 
 const Audience = () => {
-  const audiences = [
-    {
-      icon: <Building className="w-12 h-12 text-green-600" />,
-      title: "Empresas y Organizaciones",
-      description: "Para empresas que necesitan cumplir con la Ley Europea de Accesibilidad y garantizar que sus sitios web sean inclusivos para todos los usuarios."
-    },
-    {
-      icon: <Code className="w-12 h-12 text-green-600" />,
-      title: "Desarrolladores Web",
-      description: "Para equipos de desarrollo que quieren integrar la accesibilidad desde las primeras etapas del desarrollo y mantener estándares de calidad."
-    },
-    {
-      icon: <Users className="w-12 h-12 text-green-600" />,
-      title: "Agencias y Consultoras",
-      description: "Para agencias digitales que ofrecen servicios de accesibilidad y necesitan herramientas eficientes para auditar y mejorar sus proyectos."
-    },
-    {
-      icon: <FileText className="w-12 h-12 text-green-600" />,
-      title: "Instituciones Públicas",
-      description: "Para entidades gubernamentales y organizaciones públicas que deben cumplir con normativas de accesibilidad digital obligatorias."
+  const { t } = useLanguage()
+
+  const audiences = t('audience.items').map((item, index) => {
+    const icons = [<Building />, <Code />, <Users />, <FileText />]
+    return {
+      icon: React.cloneElement(icons[index], { className: "w-12 h-12 text-green-600" }),
+      title: item.title,
+      description: item.description
     }
-  ]
+  })
 
   return (
     <section className="py-16 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            ¿Para quién es A11i Detector?
+            {t('audience.title')}
           </h2>
           <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
         </div>

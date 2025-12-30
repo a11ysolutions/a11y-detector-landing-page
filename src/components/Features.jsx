@@ -1,37 +1,26 @@
 import React from 'react'
 import { CheckCircle, Users, Clock, FileCheck } from 'lucide-react'
+import { useLanguage } from '../LanguageContext'
 
 const Features = () => {
-  const features = [
-    {
-      icon: <CheckCircle className="w-12 h-12 text-green-600" />,
-      title: "Análisis Automatizado",
-      description: "Escaneo completo del sitio web con detección automática de problemas según WCAG 2.1 nivel AA y cumplimiento con la norma técnica EN 301 549."
-    },
-    {
-      icon: <FileCheck className="w-12 h-12 text-green-600" />,
-      title: "Reportes Detallados",
-      description: "Informes completos con severidad y prioridad, recomendaciones específicas para corrección y guías paso a paso para implementar soluciones."
-    },
-    {
-      icon: <Users className="w-12 h-12 text-green-600" />,
-      title: "Corrección Guiada",
-      description: "Proporciona guías paso a paso y soluciones prácticas para implementar las correcciones necesarias en tu código."
-    },
-    {
-      icon: <Clock className="w-12 h-12 text-green-600" />,
-      title: "Integración Continua",
-      description: "Se integra en tu flujo de desarrollo para mantener la accesibilidad como parte del proceso de calidad."
+  const { t } = useLanguage()
+
+  const features = t('features.items').map((item, index) => {
+    const icons = [<CheckCircle />, <FileCheck />, <Users />, <Clock />]
+    return {
+      icon: React.cloneElement(icons[index], { className: "w-12 h-12 text-green-600" }),
+      title: item.title,
+      description: item.description
     }
-  ]
+  })
 
   return (
     <section className="py-16 section-dark">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            <span className="text-white">¿Qué es A11i Detector y</span>{' '}
-            <span className="text-green-400">cómo funciona?</span>
+            <span className="text-white">{t('features.title')}</span>{' '}
+            <span className="text-green-400">{t('features.title_highlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
         </div>

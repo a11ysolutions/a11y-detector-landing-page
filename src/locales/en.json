@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "A11i Detector: Your Web Accessibility Expert",
+    "description": "Automatically discover and report accessibility issues on your website. An intelligent tool that acts as an accessibility expert to ensure compliance with the European Accessibility Law and WCAG guidelines.",
+    "cta": "Try A11i Detector for Free"
+  },
+  "features": {
+    "title": "What is A11i Detector and",
+    "title_highlight": "how does it work?",
+    "items": [
+      {
+        "title": "Automated Analysis",
+        "description": "Complete website scanning with automatic detection of issues according to WCAG 2.1 Level AA and compliance with the EN 301 549 technical standard."
+      },
+      {
+        "title": "Detailed Reports",
+        "description": "Complete reports with severity and priority, specific correction recommendations and step-by-step guides to implement solutions."
+      },
+      {
+        "title": "Guided Correction",
+        "description": "Provides step-by-step guides and practical solutions to implement the necessary corrections in your code."
+      },
+      {
+        "title": "Continuous Integration",
+        "description": "Integrates into your development workflow to maintain accessibility as part of the quality process."
+      }
+    ]
+  },
+  "audience": {
+    "title": "Who is A11i Detector for?",
+    "items": [
+      {
+        "title": "Companies and Organizations",
+        "description": "For companies that need to comply with the European Accessibility Law and ensure their websites are inclusive for all users."
+      },
+      {
+        "title": "Web Developers",
+        "description": "For development teams that want to integrate accessibility from the earliest stages of development and maintain quality standards."
+      },
+      {
+        "title": "Agencies and Consultants",
+        "description": "For digital agencies that offer accessibility services and need efficient tools to audit and improve their projects."
+      },
+      {
+        "title": "Public Institutions",
+        "description": "For government entities and public organizations that must comply with mandatory digital accessibility regulations."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Trust and Results",
+    "stats": [
+      {
+        "value": "500+",
+        "label": "Sites audited"
+      },
+      {
+        "value": "95%",
+        "label": "Detection accuracy"
+      },
+      {
+        "value": "24h",
+        "label": "Average analysis time"
+      },
+      {
+        "value": "100%",
+        "label": "WCAG compliance guaranteed"
+      }
+    ],
+    "reviews": [
+      {
+        "quote": "A11i Detector allowed us to identify and correct critical accessibility issues in record time. Now we comply with the European Accessibility Law without complications.",
+        "author": "Ana García",
+        "position": "Technology Director at Company XYZ"
+      },
+      {
+        "quote": "As an automated tool, A11i Detector is incredibly efficient. It saves us weeks of manual work and ensures we maintain accessibility standards.",
+        "author": "Carlos Rodríguez",
+        "position": "Lead Developer at Digital Agency ABC"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Try",
+    "title_highlight": "A11i Detector Free",
+    "description": "Request a free demonstration and discover how A11i Detector can transform your website's accessibility.",
+    "benefits": [
+      "Complete free analysis",
+      "Detailed report in 24h",
+      "Personalized consultation included"
+    ],
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "website": "Website to analyze",
+      "sector": "Sector",
+      "message": "Additional message",
+      "privacy": "I accept the privacy policy",
+      "submit": "Request free demo",
+      "sending": "Sending...",
+      "placeholders": {
+        "name": "Your full name",
+        "email": "your@email.com",
+        "company": "Your company name",
+        "website": "https://yoursite.com",
+        "message": "Tell us more about your needs..."
+      },
+      "sectors": {
+        "placeholder": "Select sector",
+        "ecommerce": "E-commerce",
+        "finance": "Finance",
+        "education": "Education",
+        "health": "Health",
+        "government": "Government",
+        "other": "Other"
+      },
+      "validation": {
+        "required": "Please complete all required fields.",
+        "privacy": "You must accept the privacy policy.",
+        "success": "Thank you for your interest! We will contact you soon with more information about A11i Detector."
+      }
+    }
+  },
+  "footer": {
+    "description": "Experts in Web and Digital Accessibility.",
+    "about": "We help companies and entities comply with the European Accessibility Law, the EN 301 549 technical standard and WCAG guidelines, ensuring an inclusive and legally compliant digital experience.",
+    "contact_title": "Contact",
+    "email": "a11ycontact@a11ysolutions.com",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2025 a11ySolutions. All rights reserved",
+    "privacy_policy": "Privacy Policy"
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "skip_to_footer": "Go to footer",
+    "language_selector": "Language selector. Current language: English",
+    "language_instruction": "Use arrow keys to navigate and press Enter to select",
+    "menu_toggle": "Toggle menu"
+  }
+}
