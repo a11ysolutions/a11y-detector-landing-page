@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <header className="bg-white text-gray-900 fixed top-0 w-full z-[100] shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         <div className="flex-shrink-0">
           <img
             src={logoImage}
@@ -62,7 +62,7 @@ const Header = () => {
 
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
-          <div className="container mx-auto px-4 py-4">
+          <div className="w-full px-4 sm:px-6 lg:px-8 py-4">
             <nav className="flex flex-col gap-4">
               <a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Contáctanos
