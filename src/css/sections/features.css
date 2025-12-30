@@ -25,21 +25,20 @@
     color: #ffffff !important;
 }
 
-/* Features Grid */
+/* Features Grid - Now using CSS Grid for better responsive control */
 .features-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
     margin-top: var(--spacing-xl);
     padding: 0 1rem;
 }
 
-/* Make feature cards flexible */
+/* Feature cards now have consistent sizing */
 .feature-card {
-    flex: 1;
-    min-width: 240px;
-    max-width: 280px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Feature Icon Styles */

@@ -27,24 +27,24 @@ const Audience = () => {
 
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             ¿Para quién es A11i Detector?
           </h2>
-          <div className="w-24 h-1 bg-green-400 mx-auto"></div>
+          <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {audiences.map((audience, index) => (
-            <div key={index} className="audience-card bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="audience-icon mb-6 flex justify-center">
+            <div key={index} className="audience-card bg-gray-50 p-4 sm:p-6 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="audience-icon mb-4 md:mb-6 flex justify-center">
                 {audience.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 md:mb-4 text-center">
                 {audience.title}
               </h3>
-              <p className="text-gray-600 text-center leading-relaxed">
+              <p className="text-gray-600 text-center leading-relaxed text-sm sm:text-base">
                 {audience.description}
               </p>
             </div>

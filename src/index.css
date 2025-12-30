@@ -1,5 +1,6 @@
+/* Import custom CSS */
+@import './css/sections/features.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Import custom CSS */
-@import './css/sections/features.css';
