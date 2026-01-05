@@ -7,40 +7,24 @@ const HowItWorks = () => {
   const steps = [
     {
       number: "01",
-      title: "Ejecute el análisis desde el navegador",
-      description: "Instale la extensión de A11i Detector y ejecute los tests de accesibilidad sobre la URL actual o una sección específica de la página.",
-      features: [
-        "Seleccionar qué conjunto de tests ejecutar",
-        "Lanzar el análisis sobre páginas reales, tal como las ve el usuario",
-        "Iniciar ejecuciones en entorno productivo"
-      ],
-      note: "El análisis se ejecuta de forma automatizada y en paralelo, dependiendo de la complejidad de la página."
+      title: t('how_it_works.steps.1.title'),
+      description: t('how_it_works.steps.1.description'),
+      features: t('how_it_works.steps.1.features'),
+      note: t('how_it_works.steps.1.note')
     },
     {
       number: "02",
-      title: "Revise y gestione los resultados en el Dashboard",
-      description: "Una vez finalizada la ejecución, los resultados quedan disponibles en el Dashboard de A11i Detector.",
-      features: [
-        "Ver y descargar todos sus reportes de accesibilidad",
-        "Filtrar ejecuciones por fecha y URL",
-        "Buscar reportes por URL, estado o fecha",
-        "Identificar rápidamente el estado del análisis y su estado de QA",
-        "Acceder al detalle de cada ejecución desde la tabla de resultados"
-      ],
-      note: "El Dashboard actúa como un repositorio centralizado de análisis, evitando la pérdida de resultados y facilitando el seguimiento en el tiempo."
+      title: t('how_it_works.steps.2.title'),
+      description: t('how_it_works.steps.2.description'),
+      features: t('how_it_works.steps.2.features'),
+      note: t('how_it_works.steps.2.note')
     },
     {
       number: "03",
-      title: "Analice el detalle del reporte y descargue resultados",
-      description: "Desde el detalle de cada reporte puede gestionar los issues y generar reportes finales.",
-      features: [
-        "Revisar cada issue detectado con evidencia visual",
-        "Navegar directamente al elemento afectado en la página",
-        "Añadir notas y gestionar el estado del issue",
-        "Descartar falsos positivos antes de generar el reporte final",
-        "Descargar el reporte listo para trabajar con equipos de desarrollo, QA o accesibilidad"
-      ],
-      note: "Este enfoque permite transformar un escaneo automático en un output accionable y depurado, alineado con flujos reales de trabajo."
+      title: t('how_it_works.steps.3.title'),
+      description: t('how_it_works.steps.3.description'),
+      features: t('how_it_works.steps.3.features'),
+      note: t('how_it_works.steps.3.note')
     }
   ]
 
@@ -49,7 +33,7 @@ const HowItWorks = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            ¿Cómo funciona A11i Detector?
+            {t('how_it_works.title')}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 mb-6">
             Un proceso simple y eficiente para detectar y gestionar issues de accesibilidad
@@ -140,32 +124,26 @@ const HowItWorks = () => {
                 <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
               </svg>
               <h4 className="text-lg font-semibold text-gray-900">
-                Notificaciones y seguimiento
+                {t('how_it_works.notifications.title')}
               </h4>
             </div>
             <p className="text-gray-600 mb-4">
-              Opcionalmente, puede habilitar notificaciones en tiempo real para:
+              {t('how_it_works.notifications.description')}
             </p>
             <ul className="space-y-2">
-              <li className="flex items-start gap-3">
-                <div className="w-5 h-5 bg-[#16A34A] rounded-full mt-1 flex-shrink-0 flex items-center justify-center">
-                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </div>
-                <span className="text-gray-600">Confirmar cuándo un análisis ha finalizado</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-5 h-5 bg-[#16A34A] rounded-full mt-1 flex-shrink-0 flex items-center justify-center">
-                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </div>
-                <span className="text-gray-600">Detectar errores o timeouts durante la ejecución</span>
-              </li>
+              {t('how_it_works.notifications.features').map((feature, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <div className="w-5 h-5 bg-[#16A34A] rounded-full mt-1 flex-shrink-0 flex items-center justify-center">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </div>
+                  <span className="text-gray-600">{feature}</span>
+                </li>
+              ))}
             </ul>
             <p className="text-sm text-gray-500 italic mt-4">
-              Esto evita tener que revisar manualmente el estado de los análisis.
+              {t('how_it_works.notifications.note')}
             </p>
           </div>
         </div>

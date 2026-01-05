@@ -1,31 +1,34 @@
 import React from 'react'
 import { Database, Eye, MapPin, Trash2, FileText, TrendingUp } from 'lucide-react'
+import { useLanguage } from '../LanguageContext'
 
 const DashboardResults = () => {
+  const { t } = useLanguage()
+
   const dashboardFeatures = [
     {
       icon: <Database className="w-6 h-6 text-green-600" />,
-      text: "Todas las ejecuciones quedan guardadas y accesibles"
+      text: t('dashboard_results.features')[0]
     },
     {
       icon: <Eye className="w-6 h-6 text-green-600" />,
-      text: "Evidencia visual asociada a cada issue"
+      text: t('dashboard_results.features')[1]
     },
     {
       icon: <MapPin className="w-6 h-6 text-green-600" />,
-      text: "Acceso directo al punto exacto del problema en la página"
+      text: t('dashboard_results.features')[2]
     },
     {
       icon: <Trash2 className="w-6 h-6 text-green-600" />,
-      text: "Posibilidad de descartar issues antes de descargar el reporte final"
+      text: t('dashboard_results.features')[3]
     },
     {
       icon: <FileText className="w-6 h-6 text-green-600" />,
-      text: "Notas y estados para facilitar la colaboración entre equipos"
+      text: t('dashboard_results.features')[4]
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-green-600" />,
-      text: "Base sólida para comparaciones futuras entre ejecuciones"
+      text: t('dashboard_results.features')[5]
     }
   ]
 
@@ -34,10 +37,10 @@ const DashboardResults = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Dashboard y gestión de resultados
+            {t('dashboard_results.title')}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-4xl mx-auto">
-            A11i Detector no es solo un escáner automático. Es una herramienta pensada para el trabajo real de equipos técnicos.
+            {t('dashboard_results.subtitle')}
           </p>
           <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
         </div>
@@ -47,7 +50,7 @@ const DashboardResults = () => {
             {/* Contenido de texto */}
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                A11i Detector no es solo un escáner automático. Es una herramienta pensada para el trabajo real de equipos técnicos:
+                {t('dashboard_results.description')}
               </p>
 
               <ul className="space-y-4">
@@ -69,7 +72,7 @@ const DashboardResults = () => {
               <div className="w-full max-w-md p-6 bg-gray-100 rounded-lg border border-gray-300">
                 <div className="text-center">
                   <div className="w-full h-48 bg-gray-300 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-gray-500 text-sm">Imagen próximamente</span>
+                    <span className="text-gray-500 text-sm">{t('dashboard_results.image_alt')}</span>
                   </div>
                   <p className="text-gray-600 italic">
                     Captura del Dashboard

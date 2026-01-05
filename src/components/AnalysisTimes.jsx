@@ -1,27 +1,30 @@
 import React from 'react'
 import { Clock, Shuffle, AlertTriangle, Bell } from 'lucide-react'
+import { useLanguage } from '../LanguageContext'
 
 const AnalysisTimes = () => {
+  const { t } = useLanguage()
+
   const analysisTimes = [
     {
       icon: <Clock className="w-8 h-8" />,
-      title: "20–30 minutos",
-      description: "Duración típica por ejecución"
+      title: t('analysis_times.items')[0].title,
+      description: t('analysis_times.items')[0].description
     },
     {
       icon: <Shuffle className="w-8 h-8" />,
-      title: "Variable",
-      description: "Depende de la cantidad de elementos interactivos y contenido"
+      title: t('analysis_times.items')[1].title,
+      description: t('analysis_times.items')[1].description
     },
     {
       icon: <AlertTriangle className="w-8 h-8" />,
-      title: "Timeout automático",
-      description: "Para detectar errores de ejecución"
+      title: t('analysis_times.items')[2].title,
+      description: t('analysis_times.items')[2].description
     },
     {
       icon: <Bell className="w-8 h-8" />,
-      title: "Notificaciones",
-      description: "Disponibles al finalizar el proceso o ante errores"
+      title: t('analysis_times.items')[3].title,
+      description: t('analysis_times.items')[3].description
     }
   ]
 
@@ -30,10 +33,10 @@ const AnalysisTimes = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-            Tiempos de análisis
+            {t('analysis_times.title')}
           </h2>
           <p className="text-lg md:text-xl text-gray-300 mb-6">
-            El tiempo de análisis varía según la complejidad de la página
+            {t('analysis_times.subtitle')}
           </p>
           <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
         </div>

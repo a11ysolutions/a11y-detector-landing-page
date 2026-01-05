@@ -144,6 +144,182 @@
     "copyright": "© 2025 a11ySolutions. All rights reserved",
     "privacy_policy": "Privacy Policy"
   },
+  "how_it_works": {
+    "title": "How does A11i Detector work?",
+    "subtitle": "Simple and efficient process to detect accessibility issues",
+    "steps": {
+      "1": {
+        "title": "Run the analysis from your browser",
+        "description": "Install the A11i Detector extension and run accessibility tests on the current URL or a specific section of the page.",
+        "features": [
+          "Select which test suite to run",
+          "Launch analysis on real pages as users see them",
+          "Start executions in production environment"
+        ],
+        "note": "The analysis runs automatically and in parallel, depending on the page complexity."
+      },
+      "2": {
+        "title": "Review and manage results in the Dashboard",
+        "description": "Once execution is complete, results are available in the A11i Detector Dashboard.",
+        "features": [
+          "View and download all your accessibility reports",
+          "Filter executions by date and URL",
+          "Search reports by URL, status or date",
+          "Quickly identify analysis status and QA status",
+          "Access details of each execution from the results table"
+        ],
+        "note": "The Dashboard acts as a centralized repository of analyses, avoiding loss of results and facilitating tracking over time."
+      },
+      "3": {
+        "title": "Analyze report details and download results",
+        "description": "From each report's details you can manage issues and generate final reports.",
+        "features": [
+          "Review each detected issue with visual evidence",
+          "Navigate directly to the affected element on the page",
+          "Add notes and manage issue status",
+          "Discard false positives before generating final report",
+          "Download report ready to work with development, QA or accessibility teams"
+        ],
+        "note": "This approach allows transforming automatic scanning into actionable and refined output, aligned with real workflow processes."
+      }
+    },
+    "notifications": {
+      "title": "Real-time notifications",
+      "description": "Stay informed about the progress of your analyses",
+      "features": [
+        "Confirm when an analysis has finished",
+        "Detect errors or timeouts during execution"
+      ],
+      "note": "This avoids having to manually check the status of analyses."
+    }
+  },
+  "what_detects": {
+    "title": "What does A11i Detector detect?",
+    "subtitle": "Comprehensive coverage of the most frequent and impactful accessibility issues",
+    "categories": {
+      "keyboard_focus": {
+        "title": "Keyboard and focus",
+        "description": "Complete validation of keyboard navigation, focus traps and visual indicators",
+        "items": [
+          "Interactive elements that should or should not receive focus via Tab navigation",
+          "Keyboard trap detection",
+          "Keyboard operability verification (Enter and Space)",
+          "Focus trap validation in modals",
+          "Logical focus order checking and focus indicator visibility"
+        ]
+      },
+      "contrast": {
+        "title": "Contrast (including states)",
+        "description": "Comprehensive analysis of contrast ratios in text, interactive elements and states",
+        "items": [
+          "Text contrast",
+          "Focus indicator and hover state contrast",
+          "Contrast in icons and non-text elements",
+          "Contrast in radios and checkboxes (border and selected state)",
+          "Contrast considering transparencies and color perceived by the user",
+          "Contrast of links within text blocks"
+        ]
+      },
+      "images_screen_reader": {
+        "title": "Images and screen reader",
+        "description": "Alt text evaluation, logos and screen reader compatibility",
+        "items": [
+          "Alt text evaluation and recommendations",
+          "Logo identification and treatment validation",
+          "Improved experience for screen reader users"
+        ]
+      },
+      "reflow_zoom": {
+        "title": "Reflow and zoom",
+        "description": "Responsive design verification and accessibility at different zoom levels",
+        "items": [
+          "Detection of cut or overlapping text",
+          "Correct reflow verification according to viewport",
+          "Prevention of horizontal scroll (double scroll)",
+          "Validations related to content zoom and reflow"
+        ]
+      },
+      "additional": {
+        "title": "And more...",
+        "description": "Additional validations according to WCAG 2.1 and accessibility best practices",
+        "items": [
+          "Additional validations according to WCAG 2.1",
+          "Detection of common accessibility errors",
+          "Continuous analysis of new patterns"
+        ]
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the most common questions about A11i Detector",
+    "items": [
+      {
+        "question": "Does A11i Detector replace manual auditing?",
+        "answer": "No, A11i Detector is a complementary tool. It automates detection of 70% of the most common issues, but expert manual audits remain essential for complex cases and final validation."
+      },
+      {
+        "question": "What level of coverage does it offer?",
+        "answer": "A11i Detector covers more than 70% of the most frequent accessibility issues according to WCAG 2.1 Level AA guidelines, including keyboard, focus, contrast, images, navigation and responsive design."
+      },
+      {
+        "question": "On which pages can I run the analysis?",
+        "answer": "You can run analyses on any public URL accessible from the internet. The extension works on complete web pages or specific sections you select manually."
+      },
+      {
+        "question": "How long does an analysis take?",
+        "answer": "Time varies depending on page complexity (20-30 minutes typical). Factors such as number of interactive elements, images and dynamic content affect duration."
+      },
+      {
+        "question": "Can I review and filter results before downloading them?",
+        "answer": "Yes, the Dashboard allows you to review all detected issues, filter by severity, type or URL, add notes, mark false positives and manage status before generating the final report."
+      },
+      {
+        "question": "Which browsers are compatible?",
+        "answer": "The extension is available for Chrome and Firefox. The Dashboard works in any modern browser with internet connection."
+      },
+      {
+        "question": "Is the Dashboard included?",
+        "answer": "Yes, access includes both the browser extension and complete Dashboard for result management, historical reports and team collaboration."
+      }
+    ]
+  },
+  "dashboard_results": {
+    "title": "Dashboard and results management",
+    "subtitle": "A11i Detector is not just an automatic scanner. It's a tool designed for real technical team work.",
+    "description": "A11i Detector is not just an automatic scanner. It's a tool designed for real technical team work:",
+    "features": [
+      "All executions are saved and accessible",
+      "Visual evidence associated with each issue",
+      "Direct access to the exact problem point on the page",
+      "Ability to discard issues before downloading the final report",
+      "Notes and statuses to facilitate collaboration between teams",
+      "Solid foundation for future comparisons between executions"
+    ],
+    "image_alt": "Image coming soon"
+  },
+  "analysis_times": {
+    "title": "Analysis times",
+    "subtitle": "Analysis time varies depending on page complexity",
+    "items": [
+      {
+        "title": "20–30 minutes",
+        "description": "Typical duration per execution"
+      },
+      {
+        "title": "Variable",
+        "description": "Depends on the number of interactive elements and content"
+      },
+      {
+        "title": "Automatic timeout",
+        "description": "To detect execution errors"
+      },
+      {
+        "title": "Notifications",
+        "description": "Available upon process completion or errors"
+      }
+    ]
+  },
   "accessibility": {
     "skip_to_content": "Skip to content",
     "skip_to_footer": "Go to footer",

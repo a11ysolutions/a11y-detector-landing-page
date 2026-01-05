@@ -144,6 +144,182 @@
     "copyright": "© 2025 a11ySolutions. Todos los derechos reservados",
     "privacy_policy": "Política de Privacidad"
   },
+  "how_it_works": {
+    "title": "¿Cómo funciona A11i Detector?",
+    "subtitle": "Proceso simple y eficiente para detectar problemas de accesibilidad",
+    "steps": {
+      "1": {
+        "title": "Ejecute el análisis desde el navegador",
+        "description": "Instale la extensión de A11i Detector y ejecute los tests de accesibilidad sobre la URL actual o una sección específica de la página.",
+        "features": [
+          "Seleccionar qué conjunto de tests ejecutar",
+          "Lanzar el análisis sobre páginas reales, tal como las ve el usuario",
+          "Iniciar ejecuciones en entorno productivo"
+        ],
+        "note": "El análisis se ejecuta de forma automatizada y en paralelo, dependiendo de la complejidad de la página."
+      },
+      "2": {
+        "title": "Revise y gestione los resultados en el Dashboard",
+        "description": "Una vez finalizada la ejecución, los resultados quedan disponibles en el Dashboard de A11i Detector.",
+        "features": [
+          "Ver y descargar todos sus reportes de accesibilidad",
+          "Filtrar ejecuciones por fecha y URL",
+          "Buscar reportes por URL, estado o fecha",
+          "Identificar rápidamente el estado del análisis y su estado de QA",
+          "Acceder al detalle de cada ejecución desde la tabla de resultados"
+        ],
+        "note": "El Dashboard actúa como un repositorio centralizado de análisis, evitando la pérdida de resultados y facilitando el seguimiento en el tiempo."
+      },
+      "3": {
+        "title": "Analice el detalle del reporte y descargue resultados",
+        "description": "Desde el detalle de cada reporte puede gestionar los issues y generar reportes finales.",
+        "features": [
+          "Revisar cada issue detectado con evidencia visual",
+          "Navegar directamente al elemento afectado en la página",
+          "Añadir notas y gestionar el estado del issue",
+          "Descartar falsos positivos antes de generar el reporte final",
+          "Descargar el reporte listo para trabajar con equipos de desarrollo, QA o accesibilidad"
+        ],
+        "note": "Este enfoque permite transformar un escaneo automático en un output accionable y depurado, alineado con flujos reales de trabajo."
+      }
+    },
+    "notifications": {
+      "title": "Notificaciones en tiempo real",
+      "description": "Mantente informado del progreso de tus análisis",
+      "features": [
+        "Confirmar cuándo un análisis ha finalizado",
+        "Detectar errores o timeouts durante la ejecución"
+      ],
+      "note": "Esto evita tener que revisar manualmente el estado de los análisis."
+    }
+  },
+  "what_detects": {
+    "title": "¿Qué detecta A11i Detector?",
+    "subtitle": "Cobertura exhaustiva de los problemas de accesibilidad más frecuentes e impactantes",
+    "categories": {
+      "keyboard_focus": {
+        "title": "Teclado y foco",
+        "description": "Validación completa de navegación por teclado, focus traps y indicadores visuales",
+        "items": [
+          "Elementos interactivos que deben o no recibir foco mediante navegación con Tab",
+          "Detección de trampas de teclado",
+          "Verificación de operabilidad con teclado (Enter y Espacio)",
+          "Validación de focus trap en modales",
+          "Comprobación de orden lógico del foco y visibilidad del indicador de foco"
+        ]
+      },
+      "contrast": {
+        "title": "Contraste (incluye estados)",
+        "description": "Análisis exhaustivo de ratios de contraste en texto, elementos interactivos y estados",
+        "items": [
+          "Contraste de texto",
+          "Contraste del indicador de foco y estado hover",
+          "Contraste en iconos y elementos no textuales",
+          "Contraste en radios y checkboxes (borde y estado seleccionado)",
+          "Contraste considerando transparencias y color percibido por el usuario",
+          "Contraste de enlaces dentro de bloques de texto"
+        ]
+      },
+      "images_screen_reader": {
+        "title": "Imágenes y screen reader",
+        "description": "Evaluación de alt text, logos y compatibilidad con lectores de pantalla",
+        "items": [
+          "Evaluación y recomendaciones de alt text",
+          "Identificación de logos y validación de su tratamiento",
+          "Mejora de la experiencia para usuarios de lectores de pantalla"
+        ]
+      },
+      "reflow_zoom": {
+        "title": "Reflow y zoom",
+        "description": "Verificación de responsive design y accesibilidad en diferentes niveles de zoom",
+        "items": [
+          "Detección de textos cortados o solapados",
+          "Verificación de reflow correcto según viewport",
+          "Prevención de scroll horizontal (doble scroll)",
+          "Validaciones relacionadas con zoom y reflow del contenido"
+        ]
+      },
+      "additional": {
+        "title": "Y más...",
+        "description": "Validaciones adicionales según WCAG 2.1 y mejores prácticas de accesibilidad",
+        "items": [
+          "Validaciones adicionales según WCAG 2.1",
+          "Detección de errores comunes de accesibilidad",
+          "Análisis continuo de nuevos patrones"
+        ]
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "subtitle": "Respuestas a las dudas más comunes sobre A11i Detector",
+    "items": [
+      {
+        "question": "¿A11i Detector reemplaza una auditoría manual?",
+        "answer": "No, A11i Detector es una herramienta complementaria. Automatiza la detección del 70% de los problemas más comunes, pero las auditorías manuales expertas siguen siendo esenciales para casos complejos y validación final."
+      },
+      {
+        "question": "¿Qué nivel de cobertura ofrece?",
+        "answer": "A11i Detector cubre más del 70% de los problemas de accesibilidad más frecuentes según las pautas WCAG 2.1 Nivel AA, incluyendo teclado, foco, contraste, imágenes, navegación y responsive design."
+      },
+      {
+        "question": "¿Sobre qué páginas puedo ejecutar el análisis?",
+        "answer": "Puedes ejecutar análisis sobre cualquier URL pública accesible desde internet. La extensión funciona en páginas web completas o secciones específicas que selecciones manualmente."
+      },
+      {
+        "question": "¿Cuánto tarda un análisis?",
+        "answer": "El tiempo varía según la complejidad de la página (20-30 minutos típicos). Factores como cantidad de elementos interactivos, imágenes y contenido dinámico afectan la duración."
+      },
+      {
+        "question": "¿Puedo revisar y filtrar los resultados antes de descargarlos?",
+        "answer": "Sí, el Dashboard permite revisar todos los issues detectados, filtrar por severidad, tipo o URL, añadir notas, marcar falsos positivos y gestionar el estado antes de generar el reporte final."
+      },
+      {
+        "question": "¿Qué navegadores son compatibles?",
+        "answer": "La extensión está disponible para Chrome y Firefox. El Dashboard funciona en cualquier navegador moderno con conexión a internet."
+      },
+      {
+        "question": "¿El Dashboard está incluido?",
+        "answer": "Sí, el acceso incluye tanto la extensión de navegador como el Dashboard completo para gestión de resultados, reportes históricos y colaboración en equipo."
+      }
+    ]
+  },
+  "dashboard_results": {
+    "title": "Dashboard y gestión de resultados",
+    "subtitle": "A11i Detector no es solo un escáner automático. Es una herramienta pensada para el trabajo real de equipos técnicos.",
+    "description": "A11i Detector no es solo un escáner automático. Es una herramienta pensada para el trabajo real de equipos técnicos:",
+    "features": [
+      "Todas las ejecuciones quedan guardadas y accesibles",
+      "Evidencia visual asociada a cada issue",
+      "Acceso directo al punto exacto del problema en la página",
+      "Posibilidad de descartar issues antes de descargar el reporte final",
+      "Notas y estados para facilitar la colaboración entre equipos",
+      "Base sólida para comparaciones futuras entre ejecuciones"
+    ],
+    "image_alt": "Imagen próximamente"
+  },
+  "analysis_times": {
+    "title": "Tiempos de análisis",
+    "subtitle": "El tiempo de análisis varía según la complejidad de la página",
+    "items": [
+      {
+        "title": "20–30 minutos",
+        "description": "Duración típica por ejecución"
+      },
+      {
+        "title": "Variable",
+        "description": "Depende de la cantidad de elementos interactivos y contenido"
+      },
+      {
+        "title": "Timeout automático",
+        "description": "Para detectar errores de ejecución"
+      },
+      {
+        "title": "Notificaciones",
+        "description": "Disponibles al finalizar el proceso o ante errores"
+      }
+    ]
+  },
   "accessibility": {
     "skip_to_content": "Saltar al contenido",
     "skip_to_footer": "Ir al pie de página",

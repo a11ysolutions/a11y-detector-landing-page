@@ -8,59 +8,33 @@ const WhatDetects = () => {
   const detectionCategories = [
     {
       icon: <Keyboard className="w-12 h-12 text-green-600" />,
-      title: "Teclado y foco",
-      description: "Validación completa de navegación por teclado, focus traps y indicadores visuales",
-      items: [
-        "Elementos interactivos que deben o no recibir foco mediante navegación con Tab",
-        "Detección de trampas de teclado",
-        "Verificación de operabilidad con teclado (Enter y Espacio)",
-        "Validación de focus trap en modales",
-        "Comprobación de orden lógico del foco y visibilidad del indicador de foco"
-      ]
+      title: t('what_detects.categories.keyboard_focus.title'),
+      description: t('what_detects.categories.keyboard_focus.description'),
+      items: t('what_detects.categories.keyboard_focus.items')
     },
     {
       icon: <Eye className="w-12 h-12 text-green-600" />,
-      title: "Contraste (incluye estados)",
-      description: "Análisis exhaustivo de ratios de contraste en texto, elementos interactivos y estados",
-      items: [
-        "Contraste de texto",
-        "Contraste del indicador de foco y estado hover",
-        "Contraste en iconos y elementos no textuales",
-        "Contraste en radios y checkboxes (borde y estado seleccionado)",
-        "Contraste considerando transparencias y color percibido por el usuario",
-        "Contraste de enlaces dentro de bloques de texto"
-      ]
+      title: t('what_detects.categories.contrast.title'),
+      description: t('what_detects.categories.contrast.description'),
+      items: t('what_detects.categories.contrast.items')
     },
     {
       icon: <Image className="w-12 h-12 text-green-600" />,
-      title: "Imágenes y screen reader",
-      description: "Evaluación de alt text, logos y compatibilidad con lectores de pantalla",
-      items: [
-        "Evaluación y recomendaciones de alt text",
-        "Identificación de logos y validación de su tratamiento",
-        "Mejora de la experiencia para usuarios de lectores de pantalla"
-      ]
+      title: t('what_detects.categories.images_screen_reader.title'),
+      description: t('what_detects.categories.images_screen_reader.description'),
+      items: t('what_detects.categories.images_screen_reader.items')
     },
     {
       icon: <Monitor className="w-12 h-12 text-green-600" />,
-      title: "Reflow y zoom",
-      description: "Verificación de responsive design y accesibilidad en diferentes niveles de zoom",
-      items: [
-        "Detección de textos cortados o solapados",
-        "Verificación de reflow correcto según viewport",
-        "Prevención de scroll horizontal (doble scroll)",
-        "Validaciones relacionadas con zoom y reflow del contenido"
-      ]
+      title: t('what_detects.categories.reflow_zoom.title'),
+      description: t('what_detects.categories.reflow_zoom.description'),
+      items: t('what_detects.categories.reflow_zoom.items')
     },
     {
       icon: <MoreHorizontal className="w-12 h-12 text-green-600" />,
-      title: "Y más...",
-      description: "Validaciones adicionales según WCAG 2.1 y mejores prácticas de accesibilidad",
-      items: [
-        "Validaciones adicionales según WCAG 2.1",
-        "Detección de errores comunes de accesibilidad",
-        "Análisis continuo de nuevos patrones"
-      ]
+      title: t('what_detects.categories.additional.title'),
+      description: t('what_detects.categories.additional.description'),
+      items: t('what_detects.categories.additional.items')
     }
   ]
 
@@ -69,10 +43,10 @@ const WhatDetects = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-            ¿Qué detecta A11i Detector?
+            {t('what_detects.title')}
           </h2>
           <p className="text-lg md:text-xl text-gray-300 mb-6">
-            Cobertura exhaustiva de los problemas de accesibilidad más frecuentes e impactantes
+            {t('what_detects.subtitle')}
           </p>
           <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
         </div>
