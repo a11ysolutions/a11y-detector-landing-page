@@ -1,1 +1,37 @@
 /* Footer styles are now handled by Tailwind classes in header.css */
+
+/* Mobile-specific footer layout */
+@media (max-width: 767px) {
+  .footer-content {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  .footer-logo-section {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  .footer-logo-section img {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .footer-logo-section > div {
+    text-align: center !important;
+  }
+
+  .footer-contact-section {
+    max-width: none !important;
+    margin: 0 auto !important;
+  }
+
+  .footer-contact-section h3 {
+    text-align: center !important;
+  }
+
+  .footer-contact-section li {
+    justify-content: center !important;
+  }
+}

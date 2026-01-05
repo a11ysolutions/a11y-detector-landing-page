@@ -9,9 +9,9 @@ const Footer = () => {
   return (
     <footer id="footer" className="bg-black text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 justify-between">
+        <div className="footer-content flex flex-col md:flex-row gap-8 md:gap-12 justify-between">
           <div className="flex-1">
-            <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="footer-logo-section flex flex-col md:flex-row items-center gap-6">
               <img
                 src={iaapLogo}
                 alt="IAAP Logo"
@@ -25,7 +25,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 max-w-xs">
+          <div className="footer-contact-section flex-1 max-w-xs">
             <h3 className="font-semibold text-lg mb-4 text-white">{t('footer.contact_title')}</h3>
             <ul className="space-y-3">
               <li className="flex items-center text-gray-300">

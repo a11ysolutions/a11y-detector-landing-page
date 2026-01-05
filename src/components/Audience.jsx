@@ -15,12 +15,15 @@ const Audience = () => {
   })
 
   return (
-    <section className="py-16 bg-white">
+    <section id="audience" className="py-16 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {t('audience.title')}
           </h2>
+          <p className="text-lg md:text-xl text-gray-600 mb-6">
+            {t('audience.subtitle')}
+          </p>
           <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
         </div>
 

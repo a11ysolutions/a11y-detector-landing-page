@@ -12,17 +12,29 @@ const Header = () => {
 
   return (
     <header className="bg-white text-gray-900 fixed top-0 w-full z-[100] shadow-lg">
-      <div className="w-full px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <div className="w-full px-4 sm:px-24 md:px-32 lg:px-40 flex items-center justify-between md:justify-start h-16">
         <div className="flex-shrink-0">
-          <img
-            src={logoImage}
-            alt="A11i Detector Logo"
-            className="h-7 w-auto"
-            style={{filter: 'brightness(0) saturate(100%)'}}
-          />
+          <a href="https://www.a11ysolutions.com/" target="_blank" rel="noopener noreferrer">
+            <img
+              src={logoImage}
+              alt="A11i Detector Logo"
+              className="h-7 w-auto hover:opacity-80 transition-opacity duration-200"
+              style={{filter: 'brightness(0) saturate(100%)'}}
+            />
+          </a>
         </div>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="flex-1 hidden md:flex justify-center">
+          <div className="flex items-center gap-8">
+            <a href="#features" className="nav-link-text">{t('nav.what_is')}</a>
+            <a href="#how-it-works" className="nav-link-text">{t('nav.how_it_works')}</a>
+            <a href="#what-detects" className="nav-link-text">{t('nav.what_detects')}</a>
+            <a href="#audience" className="nav-link-text">{t('nav.for_whom')}</a>
+            <a href="#faq" className="nav-link-text">{t('nav.faq')}</a>
+          </div>
+        </div>
+
+        <div className="flex-shrink-0 hidden md:flex items-center gap-4">
           <a href="#contact" className="nav-link">{t('nav.contact')}</a>
           <div className="language-selector-container" role="group" aria-labelledby="languageSelectorLabel">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600" aria-hidden="true">
@@ -64,6 +76,21 @@ const Header = () => {
         <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
           <div className="w-full px-4 sm:px-6 lg:px-8 py-4">
             <nav className="flex flex-col gap-4">
+              <a href="#features" className="nav-link-text" onClick={() => setIsMenuOpen(false)}>
+                {t('nav.what_is')}
+              </a>
+              <a href="#how-it-works" className="nav-link-text" onClick={() => setIsMenuOpen(false)}>
+                {t('nav.how_it_works')}
+              </a>
+              <a href="#what-detects" className="nav-link-text" onClick={() => setIsMenuOpen(false)}>
+                {t('nav.what_detects')}
+              </a>
+              <a href="#audience" className="nav-link-text" onClick={() => setIsMenuOpen(false)}>
+                {t('nav.for_whom')}
+              </a>
+              <a href="#faq" className="nav-link-text" onClick={() => setIsMenuOpen(false)}>
+                {t('nav.faq')}
+              </a>
               <a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 {t('nav.contact')}
               </a>

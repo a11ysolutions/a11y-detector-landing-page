@@ -18,6 +18,8 @@ html {
 
 body {
     font-family: var(--font-family);
+    font-feature-settings: normal;
+    font-variation-settings: normal;
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     color: var(--text-primary);
@@ -69,8 +71,23 @@ body {
     line-height: 2.5rem;
 }
 
+.lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+}
+
 .font-bold {
     font-weight: 700;
+}
+
+.font-extrabold {
+    font-weight: 800;
+}
+
+.text-gradient {
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(135deg, rgb(133, 224, 186), rgb(60, 221, 127));
 }
 
 .text-white {

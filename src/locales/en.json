@@ -1,52 +1,61 @@
 {
   "nav": {
+    "what_is": "What is it?",
+    "how_it_works": "How it works?",
+    "what_detects": "What detects?",
+    "for_whom": "For whom?",
+    "faq": "FAQ",
     "contact": "Contact Us"
   },
   "hero": {
-    "title": "A11i Detector: Your Web Accessibility Expert",
-    "description": "Automatically discover and report accessibility issues on your website. An intelligent tool that acts as an accessibility expert to ensure compliance with the European Accessibility Law and WCAG guidelines.",
-    "cta": "Try A11i Detector for Free"
+    "subtitle": "Browser Extension + Dashboard",
+    "title": "Automatically detect critical <span style=\"color: #0DBA83;\">web accessibility</span> issues",
+    "description": "Identify critical issues with keyboard and focus, contrast, images/alt text, reflow and more, with visual evidence and practical recommendations for remediation.",
+    "cta_primary": "Request access →",
+    "cta_secondary": "See how it works",
+    "standards_title": "Aligned with international standards",
+    "standards": ["WCAG 2.1", "EN 301 549", "European Accessibility Law"]
   },
   "features": {
-    "title": "What is A11i Detector and",
-    "title_highlight": "how does it work?",
+    "title": "What is A11i Detector?",
+    "title_highlight": "",
+    "description": "A11i Detector is an automated web accessibility analysis tool that helps technical and business teams detect more than 70% of the most common accessibility problems that directly impact user experience and regulatory compliance.",
     "items": [
       {
-        "title": "Automated Analysis",
-        "description": "Complete website scanning with automatic detection of issues according to WCAG 2.1 Level AA and compliance with the EN 301 549 technical standard."
+        "title": "Automated analysis",
+        "description": "Detects more than 70% of the most common accessibility problems"
       },
       {
-        "title": "Detailed Reports",
-        "description": "Complete reports with severity and priority, specific correction recommendations and step-by-step guides to implement solutions."
+        "title": "Visual evidence",
+        "description": "Each issue includes screenshots and exact location on the page"
       },
       {
-        "title": "Guided Correction",
-        "description": "Provides step-by-step guides and practical solutions to implement the necessary corrections in your code."
-      },
-      {
-        "title": "Continuous Integration",
-        "description": "Integrates into your development workflow to maintain accessibility as part of the quality process."
+        "title": "Regulatory compliance",
+        "description": "Aligned with WCAG and European Accessibility Law"
       }
-    ]
+    ],
+    "functionality": "It works through a <strong>browser extension</strong> and a <strong>centralized Dashboard</strong>, allowing you to run tests on specific URLs or sections, review historical results and manage detected issues in a structured way.",
+    "compliance": "A11i Detector is aligned with <strong>WCAG</strong> guidelines and the <strong>EN 301 549</strong> standard, supporting compliance with the <strong>European Accessibility Act (EAA)</strong>."
   },
   "audience": {
     "title": "Who is A11i Detector for?",
+    "subtitle": "Designed for teams that want to take accessibility seriously",
     "items": [
       {
-        "title": "Companies and Organizations",
-        "description": "For companies that need to comply with the European Accessibility Law and ensure their websites are inclusive for all users."
+        "title": "Companies and organizations",
+        "description": "That need to improve the accessibility of their digital products and advance towards compliance with the European Accessibility Act."
       },
       {
-        "title": "Web Developers",
-        "description": "For development teams that want to integrate accessibility from the earliest stages of development and maintain quality standards."
+        "title": "Development and QA teams",
+        "description": "That seek to detect accessibility issues early and reduce rework in final phases."
       },
       {
-        "title": "Agencies and Consultants",
-        "description": "For digital agencies that offer accessibility services and need efficient tools to audit and improve their projects."
+        "title": "Digital agencies and consultants",
+        "description": "That require an efficient tool to audit projects and support their accessibility services."
       },
       {
-        "title": "Public Institutions",
-        "description": "For government entities and public organizations that must comply with mandatory digital accessibility regulations."
+        "title": "Public institutions",
+        "description": "That must comply with regulatory requirements for digital accessibility and document results."
       }
     ]
   },
@@ -84,13 +93,14 @@
     ]
   },
   "contact": {
-    "title": "Try",
-    "title_highlight": "A11i Detector Free",
-    "description": "Request a free demonstration and discover how A11i Detector can transform your website's accessibility.",
+    "title": "Request access to",
+    "title_highlight": "A11i Detector",
+    "description": "Discover how A11i Detector can help you detect critical web accessibility issues faster, more structured, and aligned with real workflow processes.",
     "benefits": [
-      "Complete free analysis",
-      "Detailed report in 24h",
-      "Personalized consultation included"
+      "Access to the browser extension",
+      "Access to the results Dashboard",
+      "Execution of accessibility analysis",
+      "Management and download of reports"
     ],
     "form": {
       "name": "Name",
@@ -100,7 +110,7 @@
       "sector": "Sector",
       "message": "Additional message",
       "privacy": "I accept the privacy policy",
-      "submit": "Request free demo",
+      "submit": "Request access",
       "sending": "Sending...",
       "placeholders": {
         "name": "Your full name",
@@ -121,7 +131,7 @@
       "validation": {
         "required": "Please complete all required fields.",
         "privacy": "You must accept the privacy policy.",
-        "success": "Thank you for your interest! We will contact you soon with more information about A11i Detector."
+        "success": "Thank you for requesting access! We will notify you when A11i Detector is available for you."
       }
     }
   },

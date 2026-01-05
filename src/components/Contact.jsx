@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Mail, Linkedin, CheckCircle } from 'lucide-react'
+import { Mail, Linkedin, Chrome, BarChart3, Search, Download } from 'lucide-react'
 import { useLanguage } from '../LanguageContext'
 
 const Contact = () => {
@@ -75,23 +75,29 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div className="space-y-6">
-              <p className="white-text text-lg leading-relaxed">
+              <p className="white-text text-lg leading-relaxed text-justify">
                 {t('contact.description')}
               </p>
 
               <div className="space-y-4">
-                {t('contact.benefits').map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                    <span className="white-text">{benefit}</span>
-                  </div>
-                ))}
+                {t('contact.benefits').map((benefit, index) => {
+                  const icons = [Chrome, BarChart3, Search, Download]
+                  const IconComponent = icons[index] || CheckCircle
+                  return (
+                    <div key={index} className="flex items-center space-x-3">
+                      <div className="flex items-center justify-center w-10 h-10 bg-white/10 border border-white/20 rounded-full flex-shrink-0">
+                        <IconComponent className="w-5 h-5 text-white" />
+                      </div>
+                      <span className="white-text">{benefit}</span>
+                    </div>
+                  )
+                })}
               </div>
             </div>
 
             <div>
               <form onSubmit={handleSubmit} className="bg-gray-900/25 backdrop-blur-md border border-white/20 p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl shadow-black/25">
-                <div className="grid grid-cols-1 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div className="grid grid-cols-1 gap-13 mb-4 md:mb-6">
                   <div className="form-group">
                     <label htmlFor="nombre" className="block text-left text-white mb-2">
                       {t('contact.form.name')} *
