@@ -18,6 +18,21 @@
     line-height: var(--line-height-tight);
 }
 
+/* Responsive adjustments for mobile - override inline styles */
+@media (max-width: 640px) {
+    .hero h1 {
+        font-size: 36px !important;
+        line-height: 40px !important;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+    .hero h1 {
+        font-size: 48px !important;
+        line-height: 52px !important;
+    }
+}
+
 .hero-subtitle {
     font-size: var(--font-size-xl);
     margin-bottom: var(--spacing-xl);

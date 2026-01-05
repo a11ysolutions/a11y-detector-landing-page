@@ -6,8 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        accent: 'var(--accent-color)',
+      },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       screens: {
         'xs': '475px',

@@ -2,8 +2,12 @@ import React from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Features from './components/Features'
+import HowItWorks from './components/HowItWorks'
+import WhatDetects from './components/WhatDetects'
+import DashboardResults from './components/DashboardResults'
+import AnalysisTimes from './components/AnalysisTimes'
 import Audience from './components/Audience'
-import Testimonials from './components/Testimonials'
+import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import { LanguageProvider, useLanguage } from './LanguageContext'
@@ -20,8 +24,12 @@ function AppContent() {
       <main id="main-content">
         <Hero />
         <Features />
+        <HowItWorks />
+        <WhatDetects />
+        <DashboardResults />
+        <AnalysisTimes />
         <Audience />
-        <Testimonials />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

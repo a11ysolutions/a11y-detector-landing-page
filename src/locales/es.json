@@ -1,52 +1,61 @@
 {
   "nav": {
+    "what_is": "¿Qué es?",
+    "how_it_works": "¿Cómo funciona?",
+    "what_detects": "¿Qué detecta?",
+    "for_whom": "¿Para quién?",
+    "faq": "FAQ",
     "contact": "Contáctanos"
   },
   "hero": {
-    "title": "A11i Detector: Tu Experto en Accesibilidad Web",
-    "description": "Descubre y reporta automáticamente los problemas de accesibilidad en tu sitio web. Una herramienta inteligente que actúa como un experto en accesibilidad para garantizar el cumplimiento con la Ley Europea de Accesibilidad y las pautas WCAG.",
-    "cta": "Prueba A11i Detector gratis"
+    "subtitle": "Extensión de navegador + Dashboard",
+    "title": "Detecte automáticamente issues críticos de <span style=\"color: #0DBA83;\">accesibilidad web</span>",
+    "description": "Identifique problemas críticos de teclado y foco, contraste, imágenes/alt text, reflow y más, con evidencia visual y recomendaciones prácticas para remediar.",
+    "cta_primary": "Solicitar acceso →",
+    "cta_secondary": "Ver cómo funciona",
+    "standards_title": "Alineado con estándares internacionales",
+    "standards": ["WCAG 2.1", "EN 301 549", "Ley Europea de Accesibilidad"]
   },
   "features": {
-    "title": "¿Qué es A11i Detector y",
-    "title_highlight": "cómo funciona?",
+    "title": "¿Qué es A11i Detector?",
+    "title_highlight": "",
+    "description": "A11i Detector es una herramienta de análisis automatizado de accesibilidad web que ayuda a equipos técnicos y de negocio a detectar más del 70% de los problemas de accesibilidad más frecuentes que impactan directamente en la experiencia de usuario y el cumplimiento normativo.",
     "items": [
       {
-        "title": "Análisis Automatizado",
-        "description": "Escaneo completo del sitio web con detección automática de problemas según WCAG 2.1 nivel AA y cumplimiento con la norma técnica EN 301 549."
+        "title": "Análisis automatizado",
+        "description": "Detecta más del 70% de los problemas de accesibilidad más frecuentes"
       },
       {
-        "title": "Reportes Detallados",
-        "description": "Informes completos con severidad y prioridad, recomendaciones específicas para corrección y guías paso a paso para implementar soluciones."
+        "title": "Evidencia visual",
+        "description": "Cada issue incluye capturas y ubicación exacta en la página"
       },
       {
-        "title": "Corrección Guiada",
-        "description": "Proporciona guías paso a paso y soluciones prácticas para implementar las correcciones necesarias en tu código."
-      },
-      {
-        "title": "Integración Continua",
-        "description": "Se integra en tu flujo de desarrollo para mantener la accesibilidad como parte del proceso de calidad."
+        "title": "Cumplimiento normativo",
+        "description": "Alineado con WCAG y la Ley Europea de Accesibilidad"
       }
-    ]
+    ],
+    "functionality": "Funciona mediante una <strong>extensión de navegador</strong> y un <strong>Dashboard centralizado</strong>, permitiendo ejecutar tests sobre URLs o secciones específicas, revisar resultados históricos y gestionar los issues detectados de forma estructurada.",
+    "compliance": "A11i Detector está alineado con las pautas <strong>WCAG</strong> y la norma <strong>EN 301 549</strong>, apoyando el cumplimiento de la <strong>Ley Europea de Accesibilidad (EAA)</strong>."
   },
   "audience": {
     "title": "¿Para quién es A11i Detector?",
+    "subtitle": "Diseñado para equipos que quieren tomar la accesibilidad en serio",
     "items": [
       {
-        "title": "Empresas y Organizaciones",
-        "description": "Para empresas que necesitan cumplir con la Ley Europea de Accesibilidad y garantizar que sus sitios web sean inclusivos para todos los usuarios."
+        "title": "Empresas y organizaciones",
+        "description": "Que necesitan mejorar la accesibilidad de sus productos digitales y avanzar hacia el cumplimiento de la Ley Europea de Accesibilidad."
       },
       {
-        "title": "Desarrolladores Web",
-        "description": "Para equipos de desarrollo que quieren integrar la accesibilidad desde las primeras etapas del desarrollo y mantener estándares de calidad."
+        "title": "Equipos de desarrollo y QA",
+        "description": "Que buscan detectar issues de accesibilidad de forma temprana y reducir retrabajo en fases finales."
       },
       {
-        "title": "Agencias y Consultoras",
-        "description": "Para agencias digitales que ofrecen servicios de accesibilidad y necesitan herramientas eficientes para auditar y mejorar sus proyectos."
+        "title": "Agencias y consultoras digitales",
+        "description": "Que requieren una herramienta eficiente para auditar proyectos y apoyar sus servicios de accesibilidad."
       },
       {
-        "title": "Instituciones Públicas",
-        "description": "Para entidades gubernamentales y organizaciones públicas que deben cumplir con normativas de accesibilidad digital obligatorias."
+        "title": "Instituciones públicas",
+        "description": "Que deben cumplir requisitos normativos de accesibilidad digital y documentar resultados."
       }
     ]
   },
@@ -84,13 +93,14 @@
     ]
   },
   "contact": {
-    "title": "Prueba",
-    "title_highlight": "A11i Detector Gratis",
-    "description": "Solicita una demostración gratuita y descubre cómo A11i Detector puede transformar la accesibilidad de tu sitio web.",
+    "title": "Solicite acceso a",
+    "title_highlight": "A11i Detector",
+    "description": "Descubra cómo A11i Detector puede ayudarle a detectar issues críticos de accesibilidad web de forma más rápida, estructurada y alineada con flujos reales de trabajo.",
     "benefits": [
-      "Análisis completo gratuito",
-      "Reporte detallado en 24h",
-      "Consulta personalizada incluida"
+      "Acceso a la extensión de navegador",
+      "Acceso al Dashboard de resultados",
+      "Ejecución de análisis de accesibilidad",
+      "Gestión y descarga de reportes"
     ],
     "form": {
       "name": "Nombre",
@@ -100,7 +110,7 @@
       "sector": "Sector",
       "message": "Mensaje adicional",
       "privacy": "Acepto la política de privacidad",
-      "submit": "Solicitar demostración gratis",
+      "submit": "Solicitar acceso",
       "sending": "Enviando...",
       "placeholders": {
         "name": "Tu nombre completo",
@@ -121,7 +131,7 @@
       "validation": {
         "required": "Por favor, completa todos los campos obligatorios.",
         "privacy": "Debes aceptar la política de privacidad.",
-        "success": "¡Gracias por tu interés! Te contactaremos pronto con más información sobre A11i Detector."
+        "success": "¡Gracias por solicitar acceso! Te notificaremos cuando A11i Detector esté disponible para ti."
       }
     }
   },

@@ -4,7 +4,7 @@
     --primary-dark: #0d9e71;         /* Verde más oscuro */
     --primary-darker: #066044;       /* Verde aún más oscuro */
     --primary-darkest: #06513c;      /* Verde más oscuro aún */
-    --accent-color: #16a34a;         /* Verde estándar Tailwind */
+    --accent-color: #22c365;         /* Verde igual al de la página de referencia */
     --text-primary: #111827;         /* Gris muy oscuro */
     --text-secondary: #374151;       /* Gris oscuro */
     --text-muted: #4b5563;           /* Gris medio */
@@ -24,7 +24,7 @@
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-xxl: 4rem;
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
     --font-size-lg: 1.125rem;
