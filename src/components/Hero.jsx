@@ -24,14 +24,27 @@ const Hero = () => {
           <div className="flex gap-4 justify-center items-center mb-8 md:mb-12">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-0 bg-black text-white text-base font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-black/50 h-11"
+              className="hero-cta-primary inline-flex items-center gap-2 px-8 py-0 bg-black text-white text-base font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-black/50 h-11"
+              onClick={(e) => {
+                // Remove focus after click to prevent persistent white outline
+                setTimeout(() => e.target.blur(), 100);
+              }}
             >
               {t('hero.cta_primary')}
             </a>
 
             <button
-              onClick={() => setIsDemoModalOpen(true)}
-              className="inline-flex items-center gap-2 px-8 py-0 bg-white/10 border border-white/30 text-white text-base font-semibold rounded-lg hover:bg-white/20 hover:border-white/40 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/30 h-11"
+              onClick={() => {
+                setIsDemoModalOpen(true);
+                // Remove focus after click to prevent persistent white outline
+                setTimeout(() => {
+                  const activeElement = document.activeElement;
+                  if (activeElement && activeElement.tagName === 'BUTTON') {
+                    activeElement.blur();
+                  }
+                }, 100);
+              }}
+              className="hero-cta-secondary inline-flex items-center gap-2 px-8 py-0 bg-white/10 border border-white/30 text-white text-base font-semibold rounded-lg hover:bg-white/20 hover:border-white/40 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/30 h-11"
             >
               <svg
                 className="w-5 h-5"

@@ -34,7 +34,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center text-gray-300">
                 <Linkedin className="w-5 h-5 mr-3 flex-shrink-0" />
-                <a id="linkedin" href="https://www.linkedin.com/company/a11ysolutions/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="hover:text-[#0d9e71] transition-colors focus:outline focus:outline-2 focus:outline-[#0d9e71] focus:outline-offset-2 rounded">{t('footer.linkedin')}</a>
+                <a id="linkedin" href="https://www.linkedin.com/company/a11ysolutions/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="footer-linkedin-link hover:text-[#0d9e71] transition-colors focus:outline focus:outline-2 focus:outline-[#0d9e71] focus:outline-offset-2 rounded">{t('footer.linkedin')}</a>
               </li>
             </ul>
           </div>
@@ -42,7 +42,7 @@ const Footer = () => {
         <div className="mt-10 pt-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-300 text-sm">{t('footer.copyright')}</p>
-            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white underline transition-colors text-sm focus:outline focus:outline-2 focus:outline-[#0d9e71] focus:outline-offset-2 rounded">{t('footer.privacy_policy')}</a>
+            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="footer-privacy-policy-link text-gray-300 hover:text-white underline transition-colors text-sm focus:outline focus:outline-2 focus:outline-[#0d9e71] focus:outline-offset-2 rounded">{t('footer.privacy_policy')}</a>
           </div>
         </div>
       </div>

@@ -108,7 +108,7 @@ const Contact = () => {
                       name="nombre"
                       value={formData.nombre}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
+                      className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
                       placeholder={t('contact.form.placeholders.name')}
                       required
                     />
@@ -124,7 +124,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
+                      className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
                       placeholder={t('contact.form.placeholders.email')}
                       required
                     />
@@ -140,7 +140,7 @@ const Contact = () => {
                       name="empresa"
                       value={formData.empresa}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
+                      className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
                       placeholder={t('contact.form.placeholders.company')}
                       required
                     />
@@ -156,7 +156,7 @@ const Contact = () => {
                       name="url"
                       value={formData.url}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
+                      className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
                       placeholder={t('contact.form.placeholders.website')}
                       required
                     />
@@ -171,7 +171,7 @@ const Contact = () => {
                       name="sector"
                       value={formData.sector}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
+                      className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
                       required
                     >
                       <option value="">{t('contact.form.sectors.placeholder')}</option>
@@ -194,7 +194,7 @@ const Contact = () => {
                       value={formData.mensaje || ''}
                       onChange={handleChange}
                       rows="4"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
+                      className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
                       placeholder={t('contact.form.placeholders.message')}
                     />
                   </div>
@@ -208,11 +208,11 @@ const Contact = () => {
                       name="privacidad"
                       checked={formData.privacidad}
                       onChange={handleChange}
-                      className="mr-3 w-4 h-4 text-green-600 bg-gray-700 border-gray-600 rounded focus:ring-green-400"
+                      className="contact-form-field mr-3 w-4 h-4 text-green-600 bg-gray-700 border-gray-600 rounded focus:ring-green-400"
                       required
                     />
                     {t('contact.form.privacy')}{' '}
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 underline ml-1">
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="contact-privacy-link text-green-400 hover:text-green-300 underline ml-1">
                       {t('footer.privacy_policy').toLowerCase()}
                     </a>{' '}
                     *
@@ -222,7 +222,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-md transition duration-300 hover:from-green-700 hover:to-green-800 transform hover:scale-105 focus:outline focus:outline-4 focus:outline-white focus:outline-offset-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base"
+                  className="contact-submit-button w-full bg-gradient-to-r from-green-600 to-green-700 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-md transition duration-300 hover:from-green-700 hover:to-green-800 transform hover:scale-105 focus:outline focus:outline-4 focus:outline-white focus:outline-offset-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base"
                 >
                   {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                 </button>

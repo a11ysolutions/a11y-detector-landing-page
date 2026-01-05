@@ -39,3 +39,10 @@
     line-height: var(--line-height-loose);
     opacity: 0.9;
 }
+
+/* Hero CTA buttons focus indicators - white outline */
+.hero-cta-primary:focus-visible,
+.hero-cta-secondary:focus-visible {
+    outline: 2px solid #ffffff !important;
+    outline-offset: 2px !important;
+}

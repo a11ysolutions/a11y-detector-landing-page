@@ -7,27 +7,27 @@ const DashboardResults = () => {
 
   const dashboardFeatures = [
     {
-      icon: <Database className="w-6 h-6 text-green-600" />,
+      icon: <Database className="w-6 h-6 text-[#066044]" />,
       text: t('dashboard_results.features')[0]
     },
     {
-      icon: <Eye className="w-6 h-6 text-green-600" />,
+      icon: <Eye className="w-6 h-6 text-[#066044]" />,
       text: t('dashboard_results.features')[1]
     },
     {
-      icon: <MapPin className="w-6 h-6 text-green-600" />,
+      icon: <MapPin className="w-6 h-6 text-[#066044]" />,
       text: t('dashboard_results.features')[2]
     },
     {
-      icon: <Trash2 className="w-6 h-6 text-green-600" />,
+      icon: <Trash2 className="w-6 h-6 text-[#066044]" />,
       text: t('dashboard_results.features')[3]
     },
     {
-      icon: <FileText className="w-6 h-6 text-green-600" />,
+      icon: <FileText className="w-6 h-6 text-[#066044]" />,
       text: t('dashboard_results.features')[4]
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-green-600" />,
+      icon: <TrendingUp className="w-6 h-6 text-[#066044]" />,
       text: t('dashboard_results.features')[5]
     }
   ]
@@ -42,7 +42,7 @@ const DashboardResults = () => {
           <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-4xl mx-auto">
             {t('dashboard_results.subtitle')}
           </p>
-          <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
+          <div className="w-16 sm:w-24 h-1 bg-[#066044] mx-auto"></div>
         </div>
 
         <div className="max-w-6xl mx-auto">

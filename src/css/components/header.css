@@ -44,6 +44,11 @@ header {
     padding: 0;
 }
 
+.language-selector-container select:focus-visible {
+    outline: 2px solid #066044;
+    outline-offset: 2px;
+}
+
 .language-selector-container select option {
     background-color: #ffffff;
     color: #374151;

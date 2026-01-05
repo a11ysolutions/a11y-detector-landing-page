@@ -45,6 +45,74 @@ body {
     top: 6px;
 }
 
+/* Focus indicators for all interactive elements */
+*:focus-visible {
+    outline: 2px solid #066044;
+    outline-offset: 2px;
+}
+
+/* Ensure all interactive elements have consistent focus behavior */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible,
+[role="button"]:focus-visible,
+[role="link"]:focus-visible,
+[role="tab"]:focus-visible,
+[role="menuitem"]:focus-visible {
+    outline: 2px solid #066044;
+    outline-offset: 2px;
+}
+
+/* Remove default focus for elements that already have custom focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+/* FAQ Accordion focus indicators - high priority */
+button.faq-accordion-button:focus-visible,
+.faq-accordion-button:focus-visible,
+button.faq-accordion-button:focus,
+.faq-accordion-button:focus {
+    outline: 3px solid #ffffff !important;
+    outline-offset: -3px !important;
+    border: 1px solid #ffffff !important;
+}
+
+/* Contact form fields focus indicators - white outline */
+.contact-form-field:focus-visible,
+.contact-form-field:focus {
+    outline: 2px solid #ffffff !important;
+    outline-offset: 2px !important;
+}
+
+/* Contact privacy link focus indicators - white outline */
+.contact-privacy-link:focus-visible,
+.contact-privacy-link:focus {
+    outline: 2px solid #ffffff !important;
+    outline-offset: 2px !important;
+}
+
+/* Contact submit button focus indicators - ensure white outline */
+.contact-submit-button:focus-visible,
+.contact-submit-button:focus {
+    outline: 4px solid #ffffff !important;
+    outline-offset: 2px !important;
+}
+
+/* Footer links focus indicators - white outline */
+.footer-linkedin-link:focus-visible,
+.footer-linkedin-link:focus,
+.footer-privacy-policy-link:focus-visible,
+.footer-privacy-policy-link:focus {
+    outline: 2px solid #ffffff !important;
+    outline-offset: 2px !important;
+}
+
 /* Container */
 .container {
     max-width: 1200px;

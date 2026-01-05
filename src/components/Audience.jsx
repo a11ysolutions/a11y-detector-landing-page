@@ -8,7 +8,7 @@ const Audience = () => {
   const audiences = t('audience.items').map((item, index) => {
     const icons = [<Building />, <Code />, <Users />, <FileText />]
     return {
-      icon: React.cloneElement(icons[index], { className: "w-12 h-12 text-green-600" }),
+      icon: React.cloneElement(icons[index], { className: "w-12 h-12 text-[#066044]" }),
       title: item.title,
       description: item.description
     }
@@ -24,7 +24,7 @@ const Audience = () => {
           <p className="text-lg md:text-xl text-gray-600 mb-6">
             {t('audience.subtitle')}
           </p>
-          <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
+          <div className="w-16 sm:w-24 h-1 bg-[#066044] mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">

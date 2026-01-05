@@ -38,7 +38,7 @@ const HowItWorks = () => {
           <p className="text-lg md:text-xl text-gray-600 mb-6">
             Un proceso simple y eficiente para detectar y gestionar issues de accesibilidad
           </p>
-          <div className="w-16 sm:w-24 h-1 bg-green-400 mx-auto"></div>
+          <div className="w-16 sm:w-24 h-1 bg-[#066044] mx-auto"></div>
         </div>
 
         <div className="max-w-6xl mx-auto">
@@ -53,10 +53,10 @@ const HowItWorks = () => {
                   {/* Columna derecha - contenido */}
                   <div className={`space-y-4 ${isRightAligned ? 'lg:text-right lg:[&_p]:text-left lg:[&_ul]:text-left lg:[&_h3]:text-left' : 'lg:text-left'}`}>
                     <div className={`flex items-center gap-4 mb-4 ${isRightAligned ? 'lg:justify-end' : 'lg:justify-start'}`}>
-                      <span className="text-5xl font-extrabold text-[#16A34A]">
+                      <span className="text-5xl font-extrabold text-[#066044]">
                         {step.number}
                       </span>
-                      <div className="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-[#066044] flex items-center justify-center">
                         {step.number === '01' && (
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-white">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -84,7 +84,7 @@ const HowItWorks = () => {
                       </div>
                     </div>
 
-                    <h3 className="text-xl md:text-2xl font-bold text-[#16A34A] mb-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-[#066044] mb-4">
                       {step.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -94,7 +94,7 @@ const HowItWorks = () => {
                     <ul className="space-y-2">
                       {step.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start gap-3">
-                          <div className="w-5 h-5 bg-[#16A34A] rounded-full mt-1 flex-shrink-0 flex items-center justify-center">
+                          <div className="w-5 h-5 bg-[#066044] rounded-full mt-1 flex-shrink-0 flex items-center justify-center">
                             <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
                             </svg>
@@ -104,7 +104,7 @@ const HowItWorks = () => {
                       ))}
                     </ul>
 
-                    <p className="text-sm text-gray-500 italic border-l-4 border-green-400 pl-4">
+                    <p className="text-sm text-gray-500 italic border-l-4 border-[#066044] pl-4">
                       {step.note}
                     </p>
                   </div>
@@ -119,7 +119,7 @@ const HowItWorks = () => {
           {/* Sección adicional de notificaciones */}
           <div className="mt-16 p-6 bg-gray-50 rounded-lg border border-gray-200">
             <div className="flex items-center gap-3 mb-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#16A34A]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#066044]">
                 <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
                 <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
               </svg>
@@ -133,7 +133,7 @@ const HowItWorks = () => {
             <ul className="space-y-2">
               {t('how_it_works.notifications.features').map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-[#16A34A] rounded-full mt-1 flex-shrink-0 flex items-center justify-center">
+                  <div className="w-5 h-5 bg-[#066044] rounded-full mt-1 flex-shrink-0 flex items-center justify-center">
                     <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
                     </svg>
