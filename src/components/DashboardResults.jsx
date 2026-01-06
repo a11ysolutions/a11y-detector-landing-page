@@ -69,15 +69,12 @@ const DashboardResults = () => {
 
             {/* Imagen del dashboard */}
             <div className="flex justify-center">
-              <div className="w-full max-w-md p-6 bg-gray-100 rounded-lg border border-gray-300">
-                <div className="text-center">
-                  <div className="w-full h-48 bg-gray-300 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-gray-500 text-sm">{t('dashboard_results.image_alt')}</span>
-                  </div>
-                  <p className="text-gray-600 italic">
-                    Captura del Dashboard
-                  </p>
-                </div>
+              <div className="w-full max-w-md">
+                <img
+                  src="/assets/images/2.png"
+                  alt={t('dashboard_results.image_alt')}
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
               </div>
             </div>
           </div>

@@ -46,3 +46,27 @@
     outline: 2px solid #ffffff !important;
     outline-offset: 2px !important;
 }
+
+/* Mobile images for HowItWorks steps */
+@media (max-width: 1023px) {
+    .step-mobile-image {
+        display: block !important;
+        margin-top: 1.5rem !important;
+        grid-column: 1 / -1 !important;
+    }
+
+    .step-mobile-image img {
+        width: 100% !important;
+        max-width: 24rem !important;
+        margin: 0 auto !important;
+        border-radius: 0.5rem !important;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+        object-fit: contain !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .step-mobile-image {
+        display: none !important;
+    }
+}

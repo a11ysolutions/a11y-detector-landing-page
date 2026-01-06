@@ -44,15 +44,26 @@ const HowItWorks = () => {
         <div className="max-w-6xl mx-auto">
           <div className="space-y-12 md:space-y-16">
             {steps.map((step, index) => {
-              const isRightAligned = index === 1; // Paso 2 (índice 1) va a la derecha
-              return (
-                <div key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                  {/* Columna izquierda - vacía para pasos que van a la derecha */}
-                  {isRightAligned && <div className="hidden lg:block"></div>}
+              const hasImageRight = index === 0 || index === 2; // Paso 1 y 3 tienen imagen a la derecha
+              const hasImageLeft = index === 1; // Paso 2 tiene imagen a la izquierda
+              const hasImage = hasImageRight || hasImageLeft;
 
-                  {/* Columna derecha - contenido */}
-                  <div className={`space-y-4 ${isRightAligned ? 'lg:text-right lg:[&_p]:text-left lg:[&_ul]:text-left lg:[&_h3]:text-left' : 'lg:text-left'}`}>
-                    <div className={`flex items-center gap-4 mb-4 ${isRightAligned ? 'lg:justify-end' : 'lg:justify-start'}`}>
+              return (
+                <div key={index} className={`grid grid-cols-1 ${hasImage ? 'lg:grid-cols-2' : ''} gap-8 lg:gap-12 items-center`}>
+                  {/* Columna izquierda - imagen para paso 2 */}
+                  {hasImageLeft && (
+                    <div className="hidden lg:block">
+                      <img
+                        src="/assets/images/2.png"
+                        alt="Paso 2 - Análisis y resultados"
+                        className="w-full max-w-lg max-h-96 mx-auto rounded-lg shadow-lg object-contain"
+                      />
+                    </div>
+                  )}
+
+                  {/* Columna central - contenido */}
+                  <div className={`space-y-4 ${hasImageRight ? 'lg:text-left' : hasImageLeft ? 'lg:text-right lg:[&_p]:text-left lg:[&_ul]:text-left lg:[&_h3]:text-left' : 'lg:text-left'}`}>
+                    <div className={`flex items-center gap-4 mb-4 ${hasImageRight ? 'lg:justify-start' : hasImageLeft ? 'lg:justify-end' : 'lg:justify-start'}`}>
                       <span className="text-5xl font-extrabold text-[#066044]">
                         {step.number}
                       </span>
@@ -109,8 +120,27 @@ const HowItWorks = () => {
                     </p>
                   </div>
 
-                  {/* Columna izquierda - contenido para pasos que van a la izquierda */}
-                  {!isRightAligned && <div className="hidden lg:block"></div>}
+                  {/* Columna derecha - imagen para paso 1 y 3 */}
+                  {hasImageRight && (
+                    <div className="hidden lg:block">
+                      <img
+                        src={index === 0 ? "/assets/images/1.png" : "/assets/images/3.png"}
+                        alt={index === 0 ? "Paso 1 - Extensión del navegador" : "Paso 3 - Dashboard y resultados"}
+                        className="w-full max-w-lg max-h-96 mx-auto rounded-lg shadow-lg object-contain"
+                      />
+                    </div>
+                  )}
+
+                  {/* Columna vacía para pasos sin imagen */}
+                  {!hasImage && <div className="hidden lg:block"></div>}
+
+                  {/* Imagen para móvil - debajo del contenido */}
+                  <div className="step-mobile-image">
+                    <img
+                      src={index === 0 ? "/assets/images/1.png" : index === 1 ? "/assets/images/2.png" : "/assets/images/3.png"}
+                      alt={index === 0 ? "Paso 1 - Extensión del navegador" : index === 1 ? "Paso 2 - Análisis y resultados" : "Paso 3 - Dashboard y resultados"}
+                    />
+                  </div>
                 </div>
               );
             })}

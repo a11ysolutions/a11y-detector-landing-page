@@ -76,12 +76,12 @@ const Hero = () => {
 
       {/* Demo Modal */}
       {isDemoModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
             <div className="p-6 md:p-8">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  {t('hero.cta_secondary')} - Demo
+                  {t('hero.cta_secondary')}
                 </h2>
                 <button
                   onClick={() => setIsDemoModalOpen(false)}
@@ -96,20 +96,23 @@ const Hero = () => {
 
               <div className="space-y-6">
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <div className="flex items-center justify-center h-64 bg-gray-200 rounded-lg">
-                    <div className="text-center">
-                      <svg className="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                      </svg>
-                      <p className="text-gray-600 text-lg font-medium">Demo Video</p>
-                      <p className="text-gray-500 mt-2">Video demostrativo próximamente</p>
-                    </div>
+                  <div className="aspect-video bg-black rounded-lg overflow-hidden">
+                    <video
+                      className="w-full h-full object-cover"
+                      controls
+                      poster="/assets/images/1.png"
+                      preload="metadata"
+                    >
+                      <source src="/assets/videos/A11YDetector.mp4" type="video/mp4" />
+                      <p className="text-white text-center py-8">
+                        Tu navegador no soporta el elemento de video.
+                        <br />
+                        <a href="/assets/videos/A11YDetector.mp4" className="text-blue-400 underline">Descarga el video</a>
+                      </p>
+                    </video>
                   </div>
-                </div>
-
-                <div className="text-center">
-                  <p className="text-gray-600">
-                    La demo completa estará disponible próximamente. Mientras tanto, puedes solicitar acceso para probar A11i Detector.
+                  <p className="text-gray-600 text-sm mt-2 text-center">
+                    Demo completa de A11i Detector
                   </p>
                 </div>
               </div>
