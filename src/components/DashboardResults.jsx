@@ -1,6 +1,7 @@
 import React from 'react'
 import { Database, Eye, MapPin, Trash2, FileText, TrendingUp } from 'lucide-react'
 import { useLanguage } from '../LanguageContext'
+import dashboardImage from '/assets/images/2.png'
 
 const DashboardResults = () => {
   const { t } = useLanguage()
@@ -71,7 +72,7 @@ const DashboardResults = () => {
             <div className="flex justify-center">
               <div className="w-full max-w-md">
                 <img
-                  src="/assets/images/2.png"
+                  src={dashboardImage}
                   alt={t('dashboard_results.image_alt')}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useLanguage } from '../LanguageContext'
+import videoFile from '/assets/videos/A11YDetector.mp4'
+import posterImage from '/assets/images/1.png'
 
 const Hero = () => {
   const { t } = useLanguage()
@@ -100,14 +102,14 @@ const Hero = () => {
                     <video
                       className="w-full h-full object-cover"
                       controls
-                      poster="/assets/images/1.png"
+                      poster={posterImage}
                       preload="metadata"
                     >
-                      <source src="/assets/videos/A11YDetector.mp4" type="video/mp4" />
+                      <source src={videoFile} type="video/mp4" />
                       <p className="text-white text-center py-8">
                         Tu navegador no soporta el elemento de video.
                         <br />
-                        <a href="/assets/videos/A11YDetector.mp4" className="text-blue-400 underline">Descarga el video</a>
+                        <a href={videoFile} className="text-blue-400 underline">Descarga el video</a>
                       </p>
                     </video>
                   </div>

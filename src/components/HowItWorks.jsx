@@ -1,5 +1,8 @@
 import React from 'react'
 import { useLanguage } from '../LanguageContext'
+import step1Image from '/assets/images/1.png'
+import step2Image from '/assets/images/2.png'
+import step3Image from '/assets/images/3.png'
 
 const HowItWorks = () => {
   const { t } = useLanguage()
@@ -54,7 +57,7 @@ const HowItWorks = () => {
                   {hasImageLeft && (
                     <div className="hidden lg:block">
                       <img
-                        src="/assets/images/2.png"
+                        src={step2Image}
                         alt="Paso 2 - Análisis y resultados"
                         className="w-full max-w-lg max-h-96 mx-auto rounded-lg shadow-lg object-contain"
                       />
@@ -124,7 +127,7 @@ const HowItWorks = () => {
                   {hasImageRight && (
                     <div className="hidden lg:block">
                       <img
-                        src={index === 0 ? "/assets/images/1.png" : "/assets/images/3.png"}
+                        src={index === 0 ? step1Image : step3Image}
                         alt={index === 0 ? "Paso 1 - Extensión del navegador" : "Paso 3 - Dashboard y resultados"}
                         className="w-full max-w-lg max-h-96 mx-auto rounded-lg shadow-lg object-contain"
                       />
@@ -137,7 +140,7 @@ const HowItWorks = () => {
                   {/* Imagen para móvil - debajo del contenido */}
                   <div className="step-mobile-image">
                     <img
-                      src={index === 0 ? "/assets/images/1.png" : index === 1 ? "/assets/images/2.png" : "/assets/images/3.png"}
+                      src={index === 0 ? step1Image : index === 1 ? step2Image : step3Image}
                       alt={index === 0 ? "Paso 1 - Extensión del navegador" : index === 1 ? "Paso 2 - Análisis y resultados" : "Paso 3 - Dashboard y resultados"}
                     />
                   </div>
