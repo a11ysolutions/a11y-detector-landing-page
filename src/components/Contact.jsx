@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Mail, Linkedin, Chrome, BarChart3, Search, Download } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 import { useLanguage } from '../LanguageContext'
 
 const Contact = () => {
@@ -15,37 +16,195 @@ const Contact = () => {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [fieldErrors, setFieldErrors] = useState({})
+  const [touchedFields, setTouchedFields] = useState({})
+
+  // Recalcular errores cuando cambia el idioma para mantener traducciones actualizadas
+  useEffect(() => {
+    if (Object.keys(fieldErrors).length > 0) {
+      const updatedErrors = {}
+      Object.keys(fieldErrors).forEach(fieldName => {
+        if (fieldErrors[fieldName]) {
+          switch (fieldName) {
+            case 'nombre':
+              updatedErrors.nombre = t('contact.form.validation.name_required')
+              break
+            case 'email':
+              updatedErrors.email = fieldErrors.email.includes('formato')
+                ? t('contact.form.validation.email_invalid')
+                : t('contact.form.validation.email_required')
+              break
+            case 'empresa':
+              updatedErrors.empresa = t('contact.form.validation.company_required')
+              break
+            case 'url':
+              updatedErrors.url = t('contact.form.validation.website_required')
+              break
+            case 'privacidad':
+              updatedErrors.privacidad = t('contact.form.validation.privacy_required')
+              break
+          }
+        }
+      })
+      setFieldErrors(updatedErrors)
+    }
+  }, [t])
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
+    const fieldValue = type === 'checkbox' ? checked : value
+
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: fieldValue
     }))
+
+    // Marcar campo como tocado
+    setTouchedFields(prev => ({
+      ...prev,
+      [name]: true
+    }))
+
+    // Limpiar error cuando el usuario empiece a escribir
+    if (fieldErrors[name]) {
+      setFieldErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }))
+    }
+  }
+
+  const handleBlur = (fieldName) => {
+    setTouchedFields(prev => ({
+      ...prev,
+      [fieldName]: true
+    }))
+
+    // Validar campo individual cuando pierda foco
+    validateField(fieldName)
+  }
+
+  const validateField = (fieldName) => {
+    const value = formData[fieldName]
+    const errors = { ...fieldErrors }
+
+    switch (fieldName) {
+      case 'nombre':
+        if (!value.trim()) {
+          errors.nombre = t('contact.form.validation.name_required')
+        } else {
+          errors.nombre = ''
+        }
+        break
+      case 'email':
+        if (!value.trim()) {
+          errors.email = t('contact.form.validation.email_required')
+        } else if (!/\S+@\S+\.\S+/.test(value)) {
+          errors.email = t('contact.form.validation.email_invalid')
+        } else {
+          errors.email = ''
+        }
+        break
+      case 'empresa':
+        if (!value.trim()) {
+          errors.empresa = t('contact.form.validation.company_required')
+        } else {
+          errors.empresa = ''
+        }
+        break
+      case 'url':
+        if (!value.trim()) {
+          errors.url = t('contact.form.validation.website_required')
+        } else {
+          errors.url = ''
+        }
+        break
+      case 'privacidad':
+        if (!value) {
+          errors.privacidad = t('contact.form.validation.privacy_required')
+        } else {
+          errors.privacidad = ''
+        }
+        break
+    }
+
+    setFieldErrors(errors)
+    return !errors[fieldName] // Retorna true si no hay error
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Validación básica
-    const requiredFields = ['nombre', 'email', 'empresa', 'url', 'sector']
-    const isValid = requiredFields.every(field => formData[field].trim() !== '')
+    // Marcar todos los campos como tocados
+    const allFields = ['nombre', 'email', 'empresa', 'url', 'privacidad']
+    const touchedState = {}
+    allFields.forEach(field => {
+      touchedState[field] = true
+    })
+    setTouchedFields(touchedState)
 
-    if (!isValid) {
-      alert(t('contact.form.validation.required'))
-      setIsSubmitting(false)
-      return
+    // Validar todos los campos
+    const errors = {}
+    let hasErrors = false
+
+    // Validar campos requeridos
+    const requiredFields = ['nombre', 'email', 'empresa', 'url']
+    requiredFields.forEach(field => {
+      if (!formData[field] || !formData[field].toString().trim()) {
+        errors[field] = t(`contact.form.validation.${field}_required`)
+        hasErrors = true
+      }
+    })
+
+    // Validar email
+    if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = t('contact.form.validation.email_invalid')
+      hasErrors = true
     }
 
+    // Validar privacidad
     if (!formData.privacidad) {
-      alert(t('contact.form.validation.privacy'))
+      errors.privacidad = t('contact.form.validation.privacy_required')
+      hasErrors = true
+    }
+
+    setFieldErrors(errors)
+
+    if (hasErrors) {
       setIsSubmitting(false)
+      // Enfocar el primer campo con error
+      const firstErrorField = Object.keys(errors).find(field => errors[field])
+      if (firstErrorField) {
+        const element = document.getElementById(firstErrorField)
+        if (element) {
+          element.focus()
+        }
+      }
       return
     }
 
-    // Simular envío
-    setTimeout(() => {
+    try {
+      // Preparar los datos para EmailJS
+      const templateParams = {
+        from_name: formData.nombre,
+        from_email: formData.email,
+        empresa: formData.empresa,
+        website: formData.url,
+        sector: formData.sector,
+        mensaje: formData.mensaje || 'No message provided',
+        to_email: import.meta.env.VITE_CONTACT_EMAIL || 'dariana.lago@a11ysolutions.com'
+      }
+
+      // Enviar email usando EmailJS
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+
+      // Éxito - limpiar formulario y mostrar mensaje
       alert(t('contact.form.validation.success'))
       setFormData({
         nombre: '',
@@ -56,8 +215,12 @@ const Contact = () => {
         mensaje: '',
         privacidad: false
       })
+    } catch (error) {
+      console.error('Error sending email:', error)
+      alert('Hubo un error al enviar el formulario. Por favor, intenta de nuevo más tarde.')
+    } finally {
       setIsSubmitting(false)
-    }, 1000)
+    }
   }
 
   return (
@@ -108,10 +271,28 @@ const Contact = () => {
                       name="nombre"
                       value={formData.nombre}
                       onChange={handleChange}
-                      className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
+                      onBlur={() => handleBlur('nombre')}
+                      className={`contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 transition-all duration-300 text-sm sm:text-base ${
+                        fieldErrors.nombre && touchedFields.nombre
+                          ? 'border-red-500 focus:ring-red-400 focus:bg-red-900/20'
+                          : 'border-white/10 focus:ring-green-400 focus:bg-gray-700/30'
+                      }`}
                       placeholder={t('contact.form.placeholders.name')}
+                      aria-invalid={fieldErrors.nombre && touchedFields.nombre ? 'true' : 'false'}
+                      aria-describedby={fieldErrors.nombre && touchedFields.nombre ? 'nombre-error' : undefined}
                       required
                     />
+                    {fieldErrors.nombre && touchedFields.nombre && (
+                      <p
+                        id="nombre-error"
+                        className="mt-1 text-sm"
+                        style={{ color: '#FFA3A3' }}
+                        role="alert"
+                        aria-live="polite"
+                      >
+                        {fieldErrors.nombre}
+                      </p>
+                    )}
                   </div>
 
                   <div className="form-group">
@@ -124,10 +305,28 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
+                      onBlur={() => handleBlur('email')}
+                      className={`contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 transition-all duration-300 text-sm sm:text-base ${
+                        fieldErrors.email && touchedFields.email
+                          ? 'border-red-500 focus:ring-red-400 focus:bg-red-900/20'
+                          : 'border-white/10 focus:ring-green-400 focus:bg-gray-700/30'
+                      }`}
                       placeholder={t('contact.form.placeholders.email')}
+                      aria-invalid={fieldErrors.email && touchedFields.email ? 'true' : 'false'}
+                      aria-describedby={fieldErrors.email && touchedFields.email ? 'email-error' : undefined}
                       required
                     />
+                    {fieldErrors.email && touchedFields.email && (
+                      <p
+                        id="email-error"
+                        className="mt-1 text-sm"
+                        style={{ color: '#FFA3A3' }}
+                        role="alert"
+                        aria-live="polite"
+                      >
+                        {fieldErrors.email}
+                      </p>
+                    )}
                   </div>
 
                   <div className="form-group">
@@ -140,10 +339,28 @@ const Contact = () => {
                       name="empresa"
                       value={formData.empresa}
                       onChange={handleChange}
-                      className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
+                      onBlur={() => handleBlur('empresa')}
+                      className={`contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 transition-all duration-300 text-sm sm:text-base ${
+                        fieldErrors.empresa && touchedFields.empresa
+                          ? 'border-red-500 focus:ring-red-400 focus:bg-red-900/20'
+                          : 'border-white/10 focus:ring-green-400 focus:bg-gray-700/30'
+                      }`}
                       placeholder={t('contact.form.placeholders.company')}
+                      aria-invalid={fieldErrors.empresa && touchedFields.empresa ? 'true' : 'false'}
+                      aria-describedby={fieldErrors.empresa && touchedFields.empresa ? 'empresa-error' : undefined}
                       required
                     />
+                    {fieldErrors.empresa && touchedFields.empresa && (
+                      <p
+                        id="empresa-error"
+                        className="mt-1 text-sm"
+                        style={{ color: '#FFA3A3' }}
+                        role="alert"
+                        aria-live="polite"
+                      >
+                        {fieldErrors.empresa}
+                      </p>
+                    )}
                   </div>
 
                   <div className="form-group">
@@ -156,10 +373,28 @@ const Contact = () => {
                       name="url"
                       value={formData.url}
                       onChange={handleChange}
-                      className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
+                      onBlur={() => handleBlur('url')}
+                      className={`contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 transition-all duration-300 text-sm sm:text-base ${
+                        fieldErrors.url && touchedFields.url
+                          ? 'border-red-500 focus:ring-red-400 focus:bg-red-900/20'
+                          : 'border-white/10 focus:ring-green-400 focus:bg-gray-700/30'
+                      }`}
                       placeholder={t('contact.form.placeholders.website')}
+                      aria-invalid={fieldErrors.url && touchedFields.url ? 'true' : 'false'}
+                      aria-describedby={fieldErrors.url && touchedFields.url ? 'url-error' : undefined}
                       required
                     />
+                    {fieldErrors.url && touchedFields.url && (
+                      <p
+                        id="url-error"
+                        className="mt-1 text-sm"
+                        style={{ color: '#FFA3A3' }}
+                        role="alert"
+                        aria-live="polite"
+                      >
+                        {fieldErrors.url}
+                      </p>
+                    )}
                   </div>
 
                   <div className="form-group">
@@ -172,7 +407,6 @@ const Contact = () => {
                       value={formData.sector}
                       onChange={handleChange}
                       className="contact-form-field w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/20 backdrop-blur-sm border border-white/10 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-gray-700/30 transition-all duration-300 text-sm sm:text-base"
-                      required
                     >
                       <option value="">{t('contact.form.sectors.placeholder')}</option>
                       <option value="ecommerce">{t('contact.form.sectors.ecommerce')}</option>
@@ -201,21 +435,41 @@ const Contact = () => {
                 </div>
 
                 <div className="form-group checkbox-group mb-6">
-                  <label className="flex items-center text-gray-300">
+                  <label className="flex items-start text-gray-300">
                     <input
                       type="checkbox"
                       id="privacidad"
                       name="privacidad"
                       checked={formData.privacidad}
                       onChange={handleChange}
-                      className="contact-form-field mr-3 w-4 h-4 text-green-600 bg-gray-700 border-gray-600 rounded focus:ring-green-400"
+                      onBlur={() => handleBlur('privacidad')}
+                      className={`contact-form-field mr-3 mt-1 w-4 h-4 bg-gray-700 border-gray-600 rounded focus:ring-green-400 ${
+                        fieldErrors.privacidad && touchedFields.privacidad
+                          ? 'border-red-500 focus:ring-red-400'
+                          : 'text-green-600'
+                      }`}
+                      aria-invalid={fieldErrors.privacidad && touchedFields.privacidad ? 'true' : 'false'}
+                      aria-describedby={fieldErrors.privacidad && touchedFields.privacidad ? 'privacidad-error' : undefined}
                       required
                     />
-                    {t('contact.form.privacy')}{' '}
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="contact-privacy-link text-green-400 hover:text-green-300 underline ml-1">
-                      {t('footer.privacy_policy').toLowerCase()}
-                    </a>{' '}
-                    *
+                    <div className="flex-1">
+                      {t('contact.form.privacy')}{' '}
+                      <a href="https://accesibilidadweb.a11ysolutions.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="contact-privacy-link text-green-400 hover:text-green-300 underline ml-1">
+                        {t('footer.privacy_policy')}
+                      </a>{' '}
+                      *
+                      {fieldErrors.privacidad && touchedFields.privacidad && (
+                        <p
+                          id="privacidad-error"
+                          className="mt-1 text-sm"
+                          style={{ color: '#FFA3A3' }}
+                          role="alert"
+                          aria-live="polite"
+                        >
+                          {fieldErrors.privacidad}
+                        </p>
+                      )}
+                    </div>
                   </label>
                 </div>
 

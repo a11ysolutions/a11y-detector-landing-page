@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="footer-logo-section flex flex-col md:flex-row items-center gap-6">
               <img
                 src={iaapLogo}
-                alt="IAAP Logo"
+                alt={t('accessibility.iaap_logo_alt')}
                 className="w-40 h-40 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain flex-shrink-0"
               />
               <div className="w-full text-center md:text-left">
@@ -42,7 +42,7 @@ const Footer = () => {
         <div className="mt-10 pt-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-300 text-sm">{t('footer.copyright')}</p>
-            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="footer-privacy-policy-link text-gray-300 hover:text-white underline transition-colors text-sm focus:outline focus:outline-2 focus:outline-[#0d9e71] focus:outline-offset-2 rounded">{t('footer.privacy_policy')}</a>
+            <a href="https://accesibilidadweb.a11ysolutions.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="footer-privacy-policy-link text-gray-300 hover:text-white underline transition-colors text-sm focus:outline focus:outline-2 focus:outline-[#0d9e71] focus:outline-offset-2 rounded">{t('footer.privacy_policy')}</a>
           </div>
         </div>
       </div>

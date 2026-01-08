@@ -55,20 +55,20 @@ const WhatDetects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
             {detectionCategories.map((category, index) => (
               <div key={index} className="feature-card bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="feature-icon mb-6 flex justify-center">
+                <div className="feature-icon mb-6 flex justify-start">
                   {category.icon}
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold text-white mb-4 text-center">
                   {category.title}
                 </h3>
-                <p className="text-gray-300 text-center leading-relaxed text-sm md:text-base mb-4">
+                <p className="text-gray-300 text-left leading-relaxed text-sm md:text-base mb-4">
                   {category.description}
                 </p>
                 <ul className="space-y-2">
                   {category.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-gray-300 text-sm leading-relaxed">{item}</span>
+                      <span className="text-gray-300 text-sm leading-relaxed text-left">{item}</span>
                     </li>
                   ))}
                 </ul>

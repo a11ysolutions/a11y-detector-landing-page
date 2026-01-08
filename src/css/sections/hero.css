@@ -70,3 +70,33 @@
         display: none !important;
     }
 }
+
+/* Estilos para video */
+.video-container video {
+    transition: object-fit 0.3s ease;
+    background-color: black;
+}
+
+.video-wrapper {
+    background-color: black;
+}
+
+/* Video en pantalla completa - mantiene proporción completa */
+.video-container video:fullscreen,
+.video-container video:-webkit-full-screen,
+.video-container video:-moz-full-screen {
+    object-fit: contain !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: black !important;
+}
+
+/* Estilos adicionales para asegurar compatibilidad en fullscreen */
+video:fullscreen,
+video:-webkit-full-screen,
+video:-moz-full-screen {
+    object-fit: contain !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: black !important;
+}

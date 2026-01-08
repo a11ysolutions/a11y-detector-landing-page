@@ -14,10 +14,10 @@ const Header = () => {
     <header className="bg-white text-gray-900 fixed top-0 w-full z-[100] shadow-lg">
       <div className="w-full px-4 sm:px-24 md:px-32 lg:px-40 flex items-center justify-between md:justify-start h-16">
         <div className="flex-shrink-0">
-          <a href="https://www.a11ysolutions.com/" target="_blank" rel="noopener noreferrer">
+          <a aria-label={t('accessibility.logo_link')} href="https://www.a11ysolutions.com/" target="_blank" rel="noopener noreferrer">
             <img
               src={logoImage}
-              alt="A11i Detector Logo"
+              alt=""
               className="h-7 w-auto hover:opacity-80 transition-opacity duration-200"
               style={{filter: 'brightness(0) saturate(100%)'}}
             />
