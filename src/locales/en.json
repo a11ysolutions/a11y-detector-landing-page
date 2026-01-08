@@ -109,7 +109,7 @@
       "website": "Website to analyze",
       "sector": "Sector",
       "message": "Additional message",
-      "privacy": "I accept the privacy policy",
+      "privacy": "I accept the",
       "submit": "Request access",
       "sending": "Sending...",
       "placeholders": {
@@ -131,7 +131,14 @@
       "validation": {
         "required": "Please complete all required fields.",
         "privacy": "You must accept the privacy policy.",
-        "success": "Thank you for requesting access! We will notify you when A11i Detector is available for you."
+        "success": "Thank you for requesting access! We will notify you when A11i Detector is available for you.",
+        "name_required": "Name is required. Please fill it in before continuing.",
+        "email_required": "Email is required. Please fill it in before continuing.",
+        "email_invalid": "Email format is not valid. Please enter a correct email.",
+        "company_required": "Company is required. Please fill it in before continuing.",
+        "website_required": "Website is required. Please fill it in before continuing.",
+        "sector_required": "Sector is required. Please select it before continuing.",
+        "privacy_required": "You must accept the privacy policy before continuing."
       }
     }
   },
@@ -139,7 +146,7 @@
     "description": "Experts in Web and Digital Accessibility.",
     "about": "We help companies and entities comply with the European Accessibility Law, the EN 301 549 technical standard and WCAG guidelines, ensuring an inclusive and legally compliant digital experience.",
     "contact_title": "Contact",
-    "email": "a11ycontact@a11ysolutions.com",
+    "email": "dariana.lago@a11ysolutions.com",
     "linkedin": "LinkedIn",
     "copyright": "© 2025 a11ySolutions. All rights reserved",
     "privacy_policy": "Privacy Policy"
@@ -325,6 +332,14 @@
     "skip_to_footer": "Go to footer",
     "language_selector": "Language selector. Current language: English",
     "language_instruction": "Use arrow keys to navigate and press Enter to select",
-    "menu_toggle": "Toggle menu"
+    "menu_toggle": "Toggle menu",
+    "close_modal": "Close modal",
+    "logo_link": "a11ysolutions Logo, Redirects to main page",
+    "logo_alt": "a11y Solutions Logo",
+    "iaap_logo_alt": "IAAP Logo, International Association of Accessibility Professionals Professional Member",
+    "step1_image_alt": "Step 1 - Browser extension",
+    "step2_image_alt": "Step 2 - Analysis and results",
+    "step3_image_alt": "Step 3 - Dashboard and results",
+    "video_description": "Complete demo showcasing the different functionalities of the A11i accessibility detector"
   }
 }

@@ -33,33 +33,47 @@ const FAQ = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4">
-            {faqItems.map((item, index) => (
-              <div key={index} className="faq-accordion-container bg-white/5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <button
-                  onClick={() => toggleItem(index)}
-                  className="faq-accordion-button w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-700 transition-colors duration-200"
-                >
-                  <h3 className="text-lg font-semibold text-white pr-4">
-                    {item.question}
-                  </h3>
-                  <div className="flex-shrink-0 text-green-400">
-                    {openItems.has(index) ? (
-                      <ChevronUp className="w-5 h-5" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5" />
-                    )}
-                  </div>
-                </button>
+            {faqItems.map((item, index) => {
+              const buttonId = `faq-button-${index}`
+              const panelId = `faq-panel-${index}`
+              const isOpen = openItems.has(index)
 
-                {openItems.has(index) && (
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-300 leading-relaxed">
-                      {item.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
+              return (
+                <div key={index} className="faq-accordion-container bg-white/5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                  <button
+                    id={buttonId}
+                    onClick={() => toggleItem(index)}
+                    className="faq-accordion-button w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-700 transition-colors duration-200"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                  >
+                    <h3 className="text-lg font-semibold text-white pr-4">
+                      {item.question}
+                    </h3>
+                    <div className="flex-shrink-0 text-green-400">
+                      {isOpen ? (
+                        <ChevronUp className="w-5 h-5" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5" />
+                      )}
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div
+                      id={panelId}
+                      className="px-6 pb-4"
+                      role="region"
+                      aria-labelledby={buttonId}
+                    >
+                      <p className="text-gray-300 leading-relaxed">
+                        {item.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>

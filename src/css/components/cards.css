@@ -46,6 +46,10 @@
     color: #0cb07c;
 }
 
+.feature-card ul {
+    text-align: left;
+}
+
 .feature-card p {
     color: rgba(255, 255, 255, 0.8);
     line-height: var(--line-height-loose);

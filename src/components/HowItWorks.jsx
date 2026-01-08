@@ -7,6 +7,19 @@ import step3Image from '/assets/images/3.png'
 const HowItWorks = () => {
   const { t } = useLanguage()
 
+  const getStepAltText = (index) => {
+    switch (index) {
+      case 0:
+        return t('accessibility.step1_image_alt')
+      case 1:
+        return t('accessibility.step2_image_alt')
+      case 2:
+        return t('accessibility.step3_image_alt')
+      default:
+        return ''
+    }
+  }
+
   const steps = [
     {
       number: "01",
@@ -58,7 +71,7 @@ const HowItWorks = () => {
                     <div className="hidden lg:block">
                       <img
                         src={step2Image}
-                        alt="Paso 2 - Análisis y resultados"
+                        alt={t('accessibility.step2_image_alt')}
                         className="w-full max-w-lg max-h-96 mx-auto rounded-lg shadow-lg object-contain"
                       />
                     </div>
@@ -128,7 +141,7 @@ const HowItWorks = () => {
                     <div className="hidden lg:block">
                       <img
                         src={index === 0 ? step1Image : step3Image}
-                        alt={index === 0 ? "Paso 1 - Extensión del navegador" : "Paso 3 - Dashboard y resultados"}
+                        alt={getStepAltText(index)}
                         className="w-full max-w-lg max-h-96 mx-auto rounded-lg shadow-lg object-contain"
                       />
                     </div>
@@ -141,7 +154,7 @@ const HowItWorks = () => {
                   <div className="step-mobile-image">
                     <img
                       src={index === 0 ? step1Image : index === 1 ? step2Image : step3Image}
-                      alt={index === 0 ? "Paso 1 - Extensión del navegador" : index === 1 ? "Paso 2 - Análisis y resultados" : "Paso 3 - Dashboard y resultados"}
+                      alt={getStepAltText(index)}
                     />
                   </div>
                 </div>

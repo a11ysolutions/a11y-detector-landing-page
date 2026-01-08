@@ -70,13 +70,11 @@ const DashboardResults = () => {
 
             {/* Imagen del dashboard */}
             <div className="flex justify-center">
-              <div className="w-full max-w-md">
-                <img
-                  src={dashboardImage}
-                  alt={t('dashboard_results.image_alt')}
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
-              </div>
+              <img
+                src={dashboardImage}
+                alt={t('dashboard_results.image_alt')}
+                className="w-full max-w-lg max-h-96 mx-auto rounded-lg shadow-lg object-contain"
+              />
             </div>
           </div>
         </div>
