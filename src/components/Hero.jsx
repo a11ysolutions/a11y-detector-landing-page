@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useLanguage } from '../LanguageContext'
-import videoFile from '/assets/videos/A11YDetector.mp4'
 import posterImage from '/assets/images/1.png'
+
+// Served at runtime from R2 by functions/assets/videos/[[path]].ts, not bundled:
+// the file is 55 MB and Cloudflare Pages rejects static assets over 25 MiB.
+const videoFile = '/assets/videos/A11YDetector.mp4'
 
 const Hero = () => {
   const { t } = useLanguage()

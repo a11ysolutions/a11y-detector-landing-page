@@ -1,0 +1,59 @@
+name: Deploy to Cloudflare Pages
+
+# Replaces Amplify's git-triggered builds, which stopped working when the AWS
+# account was suspended. Amplify built from the `production` branch.
+#
+# The 55 MB hero video is NOT in the build output - it is served from the
+# `a11y-media` R2 bucket by functions/assets/videos/[[path]].ts, because Pages
+# rejects static files over 25 MiB. Nothing here needs to upload it.
+
+on:
+  push:
+    branches: ["production"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # Never let two deploys of the same branch race each other.
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: >-
+            pages deploy dist
+            --project-name=a11y-detector-landing-page
+            --branch=${{ github.ref_name }}
+
+      - name: Notify Slack
+        if: always()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          custom_payload: |
+            {
+              "text": "${{ job.status == 'success' && '✅' || '❌' }} detector landing page → Cloudflare Pages (${{ job.status }})\nRepository: ${{ github.repository }}\nBranch: ${{ github.ref_name }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        continue-on-error: true
