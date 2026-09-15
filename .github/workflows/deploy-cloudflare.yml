@@ -26,12 +26,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # No lockfile is committed in this repo, so setup-node's npm cache has
+      # nothing to key on and `npm ci` refuses to run. Amplify used
+      # `npm install`; match it rather than invent a lockfile here.
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "npm"
 
-      - run: npm ci
+      - run: npm install
 
       - run: npm run build
 
